@@ -33,7 +33,7 @@ jobs:
           cd dist
           shasum -a 256 random-number-release.tar.gz > shasum-random-number-release
           cat shasum-random-number-release|cut -c1-64
-          shasum=${cat shasum-random-number-release|cut -c1-64}
+          shasum=$(cat shasum-random-number-release|cut -c1-64)
           echo "sha256=${shasum}" >> "$GITHUB_OUTPUT"
       - name: Upload tar to release
         uses: svenstaro/upload-release-action@v2
