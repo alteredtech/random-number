@@ -31,7 +31,7 @@ jobs:
       - name: SHAsum
         run: |
           cd dist
-          shasum -a 256 randcom-number-release.tar.gz > shasum-random-number-release
+          shasum -a 256 random-number-release.tar.gz > shasum-random-number-release
           cat shasum-random-number-release|cut -c1-64
           shasum=${cat shasum-random-number-release|cut -c1-64}
           echo "sha256=${shasum}" >> "$GITHUB_OUTPUT"
