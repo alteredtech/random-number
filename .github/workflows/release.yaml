@@ -22,6 +22,7 @@ jobs:
           generate_release_notes: true
           draft: false
           prerelease: false
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Tarball for release
         run: |
           tar -czvf dist/random-number-release.tar.gz scripts Pipfile Pipfile.lock
