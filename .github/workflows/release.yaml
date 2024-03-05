@@ -37,16 +37,6 @@ jobs:
           pip install pipenv requests
           pipenv install
           pipenv run pip freeze > requirements.txt
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: requirements
-          path: requirements.txt
-          retention-days: 1
-      - name: Tarball for release
-        run: |
-          mkdir dist
-          tar -czvf dist/random-number-release.tar.gz scripts
       - name: Create resource file
         id: create_resource
         run: |
@@ -59,6 +49,12 @@ jobs:
           name: brew-resources
           path: resources.txt
           retention-days: 1
+
+      - name: Tarball for release
+        run: |
+          mkdir dist
+          tar -czvf dist/random-number-release.tar.gz scripts
+
       - name: SHAsum
         id: shasum
         run: |
@@ -67,6 +63,7 @@ jobs:
           cat shasum-random-number-release|cut -c1-64
           shasum=$(cat shasum-random-number-release|cut -c1-64)
           echo "sha256=${shasum}" >> "$GITHUB_OUTPUT"
+
       - name: Upload tar to release
         uses: svenstaro/upload-release-action@v2
         with:
@@ -75,6 +72,7 @@ jobs:
           file: dist/*
           tag: ${{ github.ref }}
           overwrite: true
+
   update-homebrew:
     name: Update Homebrew
     needs: build
@@ -84,12 +82,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: brew-resources
-          path: resources.txt
       - name: Clone Homebrew
         env:
           SHA: ${{ needs.build.outputs.sha256 }}
         run: |
-          cat resources.txt
           git config --global user.email "michael@einreinhof.com"
           git config --global user.name "${{ github.actor }}"
           eval `ssh-agent -s`
