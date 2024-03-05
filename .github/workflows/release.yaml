@@ -16,8 +16,6 @@ jobs:
       - name: Create release
         id: create_release
         uses: softprops/action-gh-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           tag_name: ${{ github.ref}}
           name: Release ${{ github.ref_name }}
@@ -43,3 +41,26 @@ jobs:
           file: dist/*
           tag: ${{ github.ref }}
           overwrite: true
+  update-homebrew:
+    name: Update Homebrew
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone Homebrew
+        env:
+          SHA: ${{ needs.build.outputs.sha256 }}
+        run: |
+          git config --global user.email "${{ github.email }}"
+          git config --global user.name "${{ github.actor }}"
+          eval `ssh-agent -s`
+          ssh-add - <<< '${{ secrets.HOMEBREW_DEPLOY_SSH }}'
+          git clone git@github.com:alteredtech/homebrew-test-tap.git homebrew
+          cd homebrew
+          cat <<EOF > tools/release.json
+          {
+            "version": "${{ github.ref_name }}",
+            "sha256": "$SHA"
+          }
+          EOF
+          git commit tools/release.json -m 'Another Tools release ${{ github.ref_name }}'
+          git push
