@@ -76,7 +76,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: brew-resources
-          path: brew/resources.txt
+          path: resources.txt
       - name: Clone Homebrew
         env:
           SHA: ${{ needs.build.outputs.sha256 }}
@@ -87,7 +87,7 @@ jobs:
           ssh-add - <<< '${{ secrets.HOMEBREW_DEPLOY_SSH }}'
           git clone git@github.com:alteredtech/homebrew-test-tap.git homebrew
           cd homebrew
-          cat brew/resources.txt > tools/resources.txt
+          cat ../resources.txt > tools/resources.txt
           cat <<EOF > tools/release.json
           {
             "version": "${{ github.ref_name }}",
