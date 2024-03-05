@@ -81,13 +81,13 @@ jobs:
         env:
           SHA: ${{ needs.build.outputs.sha256 }}
         run: |
-          pwd
-          ls
+          cat resources.txt
           git config --global user.email "michael@einreinhof.com"
           git config --global user.name "${{ github.actor }}"
           eval `ssh-agent -s`
           ssh-add - <<< '${{ secrets.HOMEBREW_DEPLOY_SSH }}'
           git clone git@github.com:alteredtech/homebrew-test-tap.git homebrew
+          ls
           cd homebrew
           cat ../resources.txt > tools/resources.txt
           cat <<EOF > tools/release.json
