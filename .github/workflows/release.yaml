@@ -44,7 +44,8 @@ jobs:
       - name: Create resource file
         id: create_resource
         run: |
-          pypackage_convert.py > resources.txt
+          chmod +x pypackage_convert.py
+          python pypackage_convert.py > resources.txt
           echo "::set-output name=resources_file::resources.txt"
       - name: Create resource file
         run: |
