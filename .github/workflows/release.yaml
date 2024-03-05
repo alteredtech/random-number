@@ -49,11 +49,14 @@ jobs:
           name: brew-resources
           path: resources.txt
           retention-days: 1
+      - name: Create pyproject.toml
+        run: |
+          cp Pipfile pyproject.toml
 
       - name: Tarball for release
         run: |
           mkdir dist
-          tar -czvf dist/random-number-release.tar.gz scripts
+          tar -czvf dist/random-number-release.tar.gz scripts pyproject.toml
 
       - name: SHAsum
         id: shasum
