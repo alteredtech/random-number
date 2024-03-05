@@ -11,9 +11,18 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       sha256: ${{ steps.shasum.outputs.sha256 }}
+      resources_file: ${{ steps.create_resource.outputs.resources_file }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x # Replace with the desired Python version
+      - name: Ensure pip is installed
+        run: |
+          python -m ensurepip --upgrade
+          python -m pip install --upgrade pip
       - name: Create release
         id: create_release
         uses: softprops/action-gh-release@v1
@@ -23,10 +32,23 @@ jobs:
           generate_release_notes: true
           draft: false
           prerelease: false
+      - name: Pip Requirements file
+        run: |
+          sudo apt-get install python3-pip
+          pip install pipenv
+          pipenv run pip freeze > requirements.txt
       - name: Tarball for release
         run: |
           mkdir dist
-          tar -czvf dist/random-number-release.tar.gz scripts Pipfile Pipfile.lock
+          tar -czvf dist/random-number-release.tar.gz scripts
+      - name: Create resource file
+        id: create_resource
+        run: |
+          pypackage_convert.py > resources.txt
+          echo "::set-output name=resources_file::resources.txt"
+      - name: Create resource file
+        run: |
+          pypackage_convert.py > resources.txt
       - name: SHAsum
         id: shasum
         run: |
@@ -58,11 +80,13 @@ jobs:
           ssh-add - <<< '${{ secrets.HOMEBREW_DEPLOY_SSH }}'
           git clone git@github.com:alteredtech/homebrew-test-tap.git homebrew
           cd homebrew
+          cat ${{ needs.build.outputs.resources_file }} > tools/resources.txt
           cat <<EOF > tools/release.json
           {
             "version": "${{ github.ref_name }}",
             "sha256": "$SHA"
           }
           EOF
-          git commit tools/release.json -m 'Another Tools release ${{ github.ref_name }}'
+          git add tools/
+          git commit -m 'Another Tools release ${{ github.ref_name }}'
           git push
