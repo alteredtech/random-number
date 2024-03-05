@@ -81,6 +81,8 @@ jobs:
         env:
           SHA: ${{ needs.build.outputs.sha256 }}
         run: |
+          pwd
+          ls
           git config --global user.email "michael@einreinhof.com"
           git config --global user.name "${{ github.actor }}"
           eval `ssh-agent -s`
