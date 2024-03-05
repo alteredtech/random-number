@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 inquirer = "*"
+boto3 = "*"
 
 [dev-packages]
 

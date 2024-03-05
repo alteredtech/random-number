@@ -1,0 +1,42 @@
+# .github/workflows/release.yaml
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    name: Create Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Create release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref}}
+          name: Release ${{ github.ref_name }}
+          generate_release_notes: true
+          draft: false
+          prerelease: false
+      - name: Tarball for release
+        run: |
+          tar -czvf dist/random-number-release.tar.gz scripts Pipfile Pipfile.lock
+      - name: SHAsum
+        run: |
+          cd dist
+          shasum -a 256 randcom-number-release.tar.gz > shasum-random-number-release
+          cat shasum-random-number-release|cut -c1-64
+          shasum=${cat shasum-random-number-release|cut -c1-64}
+          echo "sha256=${shasum}" >> "$GITHUB_OUTPUT"
+      - name: Upload tar to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file_glob: true
+          file: dist/*
+          tag: ${{ github.ref }}
+          overwrite: true
