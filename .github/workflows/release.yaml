@@ -11,7 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       sha256: ${{ steps.shasum.outputs.sha256 }}
-      resources_file: ${{ steps.create_resource.outputs.resources_file }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -46,7 +45,12 @@ jobs:
         run: |
           chmod +x ./pypackage_convert.py
           python ./pypackage_convert.py > resources.txt
-          echo "::set-output name=resources_file::resources.txt"
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: brew-resources
+          path: resources.txt
+          retention-days: 1
       - name: SHAsum
         id: shasum
         run: |
@@ -68,6 +72,10 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: brew-resources
       - name: Clone Homebrew
         env:
           SHA: ${{ needs.build.outputs.sha256 }}
@@ -78,7 +86,7 @@ jobs:
           ssh-add - <<< '${{ secrets.HOMEBREW_DEPLOY_SSH }}'
           git clone git@github.com:alteredtech/homebrew-test-tap.git homebrew
           cd homebrew
-          cat ${{ needs.build.outputs.resources_file }} > tools/resources.txt
+          cat resources.txt > tools/resources.txt
           cat <<EOF > tools/release.json
           {
             "version": "${{ github.ref_name }}",
