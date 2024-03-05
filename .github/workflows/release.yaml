@@ -9,7 +9,8 @@ jobs:
   build:
     name: Create Release
     runs-on: ubuntu-latest
-
+    outputs:
+      sha256: ${{ steps.shasum.outputs.sha256 }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -27,6 +28,7 @@ jobs:
           mkdir dist
           tar -czvf dist/random-number-release.tar.gz scripts Pipfile Pipfile.lock
       - name: SHAsum
+        id: shasum
         run: |
           cd dist
           shasum -a 256 random-number-release.tar.gz > shasum-random-number-release
@@ -50,7 +52,7 @@ jobs:
         env:
           SHA: ${{ needs.build.outputs.sha256 }}
         run: |
-          git config --global user.email "${{ github.email }}"
+          git config --global user.email "michael@einreinhof.com"
           git config --global user.name "${{ github.actor }}"
           eval `ssh-agent -s`
           ssh-add - <<< '${{ secrets.HOMEBREW_DEPLOY_SSH }}'
