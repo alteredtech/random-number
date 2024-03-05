@@ -16,15 +16,17 @@ jobs:
       - name: Create release
         id: create_release
         uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           tag_name: ${{ github.ref}}
           name: Release ${{ github.ref_name }}
           generate_release_notes: true
           draft: false
           prerelease: false
-          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Tarball for release
         run: |
+          mkdir dist
           tar -czvf dist/random-number-release.tar.gz scripts Pipfile Pipfile.lock
       - name: SHAsum
         run: |
