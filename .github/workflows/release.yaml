@@ -35,7 +35,7 @@ jobs:
       - name: Pip Requirements file
         run: |
           sudo apt-get install python3-pip
-          pip install pipenv, requests
+          pip install pipenv requests
           pipenv run pip freeze > requirements.txt
       - name: Tarball for release
         run: |
