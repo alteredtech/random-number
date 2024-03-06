@@ -24,7 +24,9 @@ class RandomNumber < Formula
   
     def install
       Dir["scripts/*.py"].each do |file|
-        bin.install file
+        libexec.install file
+        python_script = File.basename(file, ".py")
+        bin.install_symlink libexec/file => python_script
       end
       virtualenv_install_with_resources
     end
