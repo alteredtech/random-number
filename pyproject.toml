@@ -1,10 +1,10 @@
 [tool.poetry.scripts]
-randnumber = 'scripts.randnumber:main'
-randnumber2 = 'scripts.randnumber2:main'
+randnumber = 'random-number.randnumber:main'
+randnumber2 = 'random-number.randnumber2:main'
 
 [tool.poetry]
 name = "random-number"
-version = "v1.2.39"
+version = "v1.2.40"
 description = ""
 authors = ["Michael Einreinhof <michael@einreinhof.com>"]
 
