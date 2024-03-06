@@ -56,4 +56,5 @@ def generate_resource_blocks(requirements_file="requirements.txt"):
  
 if __name__ == "__main__":
     resources_text = generate_resource_blocks()
-    print(json.dumps(resources_text))
+    final_json = {"resources":resources_text}
+    print(json.dumps(final_json))
