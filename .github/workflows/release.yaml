@@ -92,7 +92,6 @@ jobs:
           template: random-number.rb.j2
           output_file: random-number.rb
           data_file: resources.json
-          data_format: json
         # env:
         #   sha: ${{ needs.build.outputs.sha256 }}
         #   version: ${{ github.ref_name }}
