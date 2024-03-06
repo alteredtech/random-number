@@ -10,14 +10,14 @@ class RandomNumber < Formula
     license "MIT"
 
     url "https://github.com/alteredtech/random-number/releases/download/{{ env['version'] }}/random-number-release.tar.gz"
-    sha256 {{ env['sha256'] }}
+    sha256 "{{ env['sha256'] }}"
     
     depends_on "python@3.12"
 
-    {% for row in resources %}
-    resource {{ row.name }} do
-        url {{ row.url }}
-        sha256 {{ row.sha }}
+    {% for package in data %}
+    resource {{ package.name }} do
+        url {{ package.url }}
+        sha256 {{ package.sha }}
     end
     {% endfor %}
   
