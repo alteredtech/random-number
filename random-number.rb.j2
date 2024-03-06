@@ -15,7 +15,7 @@ class RandomNumber < Formula
     
     depends_on "python@3.12"
 
-    {% for package in data %}
+    {% for package in resources %}
     resource {{ package.name }} do
         url {{ package.url }}
         sha256 {{ package.sha }}
