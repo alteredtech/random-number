@@ -104,7 +104,7 @@ jobs:
 
       - name: Clone Homebrew
         env:
-          sha: ${{ needs.build.outputs.sha256 }}
+          SHA: ${{ needs.build.outputs.sha256 }}
         run: |
           git config --global user.email "michael@einreinhof.com"
           git config --global user.name "${{ github.actor }}"
@@ -119,6 +119,6 @@ jobs:
             "sha256": "$SHA"
           }
           EOF
-          git add tools/
+          git add tools/ Formula/random-number.rb
           git commit -m 'Another Tools release ${{ github.ref_name }}'
           git push
