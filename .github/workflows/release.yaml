@@ -55,7 +55,14 @@ jobs:
           output_file: pyproject.toml
         env:
           DEPENDENCIES: ${{ steps.dependency_output.outputs.dep }}
-          VERSION: ${{ github.ref_name }}
+          PACKAGE_VERSION: ${{ github.ref_name }}
+      
+      - name: Upload pyproject.toml
+        uses: actions/upload-artifact@v4
+        with:
+          name: py-project
+          path: pyproject.toml
+          retention-days: 1
 
       - name: Create resource file
         id: create_resource
@@ -64,7 +71,7 @@ jobs:
           chmod +x ./pypackage_convert.py
           python ./pypackage_convert.py > resources.json
 
-      - name: Upload artifact
+      - name: Upload resources.json
         uses: actions/upload-artifact@v4
         with:
           name: brew-resources
