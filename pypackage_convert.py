@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import requests
+import json
  
 def generate_resource_blocks(requirements_file="requirements.txt"):
     pypi_base_url = "https://pypi.org/pypi"
@@ -43,9 +44,9 @@ def generate_resource_blocks(requirements_file="requirements.txt"):
             #     f"{pkg_name},{download_url},{sha256}\n"
             # )
             resource_block = {
-                "name":f"{pkg_name}",
-                "url":f"{download_url}",
-                "sha":f"{sha256}"
+                "name": f"{pkg_name}",
+                "url": f"{download_url}",
+                "sha": f"{sha256}"
             }
  
             resource_blocks.append(resource_block)
@@ -55,4 +56,4 @@ def generate_resource_blocks(requirements_file="requirements.txt"):
  
 if __name__ == "__main__":
     resources_text = generate_resource_blocks()
-    print(resources_text)
+    print(json.dumps(resources_text))
