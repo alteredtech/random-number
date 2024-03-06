@@ -23,12 +23,12 @@ class RandomNumber < Formula
     {% endfor %}
   
     def install
-      Dir["scripts/*.py"].each do |file|
-        libexec.install file
-        python_script = File.basename(file, ".py")
-        bin.install_symlink libexec/file => python_script
-      end
-      virtualenv_install_with_resources
+        libexec.install ["scripts/randnumber.py"]
+        bin.install_symlink libexec/randnumber.py => randnumber
+        libexec.install ["scripts/randnumber2.py"]
+        bin.install_symlink libexec/randnumber2.py => randnumber2
+        
+        virtualenv_install_with_resources
     end
   
     test do
