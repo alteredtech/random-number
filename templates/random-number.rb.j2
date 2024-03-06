@@ -1,5 +1,5 @@
-require 'json'
 
+require 'json'
 
 class RandomNumber < Formula
     include Language::Python::Virtualenv
