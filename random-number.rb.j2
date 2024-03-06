@@ -15,9 +15,9 @@ class RandomNumber < Formula
     depends_on "python@3.12"
 
     {% for row in resources %}
-    resource {{ row["name"] }} do
-        url {{ row["url"] }}
-        sha256 {{ row["sha"] }}
+    resource {{ row.name }} do
+        url {{ row.url }}
+        sha256 {{ row.sha }}
     end
     {% endfor %}
   
