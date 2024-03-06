@@ -10,7 +10,7 @@ class RandomNumber < Formula
     version release['version']
     license "MIT"
 
-    url "https://github.com/alteredtech/random-number/releases/download/#{version}/random-number-release.tar.gz"
+    url "https://github.com/alteredtech/random-number/releases/download/#{version}/tools_package-#{version}.tar.gz"
     sha256 release['sha256']
     
     depends_on "python@3.12"
@@ -27,11 +27,6 @@ class RandomNumber < Formula
     end
   
     def install
-        libexec.install "scripts/randnumber.py"
-        bin.install_symlink libexec/"randnumber.py" => "randnumber"
-        libexec.install "scripts/randnumber2.py"
-        bin.install_symlink libexec/"randnumber2.py" => "randnumber2"
-
         venv = virtualenv_create(libexec, python3)
         venv.pip_install resources
         venv.pip_install_and_link buildpath

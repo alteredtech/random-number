@@ -14,14 +14,17 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: 3.12.2
+
       - name: Ensure pip is installed
         run: |
           python -m ensurepip --upgrade
           python -m pip install --upgrade pip
+
       - name: Create release
         id: create_release
         uses: softprops/action-gh-release@v1
@@ -31,37 +34,55 @@ jobs:
           generate_release_notes: true
           draft: false
           prerelease: false
+
       - name: Pip Requirements file
         run: |
           sudo apt-get install python3-pip
           pip install pipenv requests
           pipenv install
           pipenv run pip freeze > requirements.txt
+
+      - name: Convert Requirements file to list output
+        id: dependency_output
+        run: |
+          dep=$(sed 's/\(.*\)==\(.*\)/"\1==\2"/' requirements.txt | tr '\n' ',')
+          echo "req=${dep}" >> "$GITHUB_OUTPUT"
+      
+      - name: Template pyproject.toml
+        uses: cuchi/jinja2-action@v1.2.2
+        with:
+          template: templates/pyproject.toml.j2
+          output_file: pyproject.toml
+        env:
+          DEPENDENCIES: ${{ steps.dependency_output.outputs.dep }}
+          VERSION: ${{ github.ref_name }}
+
       - name: Create resource file
         id: create_resource
         run: |
           ls
           chmod +x ./pypackage_convert.py
           python ./pypackage_convert.py > resources.json
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: brew-resources
           path: resources.json
           retention-days: 1
-
-      - name: Tarball for release
+      
+      - name: Package
         run: |
-          mkdir dist
-          tar -czvf dist/random-number-release.tar.gz scripts pyproject.toml
+          python3 -m pip install --upgrade build
+          python3 -m build
 
       - name: SHAsum
         id: shasum
         run: |
           cd dist
-          shasum -a 256 random-number-release.tar.gz > shasum-random-number-release
-          cat shasum-random-number-release|cut -c1-64
-          shasum=$(cat shasum-random-number-release|cut -c1-64)
+          shasum -a 256 tools_package-*.tar.gz > shasum-package-release
+          cat shasum-package-release|cut -c1-64
+          shasum=$(cat shasum-package-release|cut -c1-64)
           echo "sha256=${shasum}" >> "$GITHUB_OUTPUT"
 
       - name: Upload tar to release
