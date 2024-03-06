@@ -1,0 +1,22 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "random-number"
+version = "v1.2.36"
+description = ""
+authors = ["Your Name <michael@einreinhof.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+urllib3 = "^2.0.7"
+wcwidth = "^0.2.13"
+xmod = "^1.8.1"
+
+[tool.poetry.scripts]
+randnumber = 'scripts.randnumber:main'
+randnumber2 = 'scripts.randnumber2:main'
+
+[build]
+script = ["scripts/randnumber.py", "scripts/randnumber2.py"]
