@@ -86,12 +86,18 @@ jobs:
         with:
           name: brew-resources
 
-      - name: Jinja2
-        uses: cuchi/jinja2-action@v1.2.2
-        with:
-          template: random-number.rb.j2
-          output_file: random-number.rb
-          data_file: resources.json
+      - name: Install Jinja2
+        run: pip install jinja2-cli
+
+      - name: Render Jinja2 template
+        run: jinja2 random-number.rb.j2 -o random-number.rb --format=json resources.json
+
+      # - name: Jinja2
+      #   uses: cuchi/jinja2-action@v1.2.2
+      #   with:
+      #     template: random-number.rb.j2
+      #     output_file: random-number.rb
+      #     data_file: resources.json
         # env:
         #   sha: ${{ needs.build.outputs.sha256 }}
         #   version: ${{ github.ref_name }}
