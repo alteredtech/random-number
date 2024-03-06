@@ -5,7 +5,7 @@ import requests
 def generate_resource_blocks(requirements_file="requirements.txt"):
     pypi_base_url = "https://pypi.org/pypi"
  
-    resource_blocks = ""
+    resource_blocks = []
  
     with open(requirements_file, "r") as file:
         for line in file:
@@ -39,11 +39,16 @@ def generate_resource_blocks(requirements_file="requirements.txt"):
             download_url = selected_url["url"]
             sha256 = selected_url["digests"]["sha256"]
  
-            resource_block = (
-                f"{pkg_name},{download_url},{sha256}\n"
-            )
+            # resource_block = (
+            #     f"{pkg_name},{download_url},{sha256}\n"
+            # )
+            resource_block = {
+                "name":f"{pkg_name}",
+                "url":f"{download_url}",
+                "sha":f"{sha256}"
+            }
  
-            resource_blocks += resource_block
+            resource_blocks.append(resource_block)
  
     return resource_blocks
  

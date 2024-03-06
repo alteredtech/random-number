@@ -17,7 +17,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.11.2
+          python-version: 3.12.2
       - name: Ensure pip is installed
         run: |
           python -m ensurepip --upgrade
@@ -42,21 +42,18 @@ jobs:
         run: |
           ls
           chmod +x ./pypackage_convert.py
-          python ./pypackage_convert.py > resources.txt
+          python ./pypackage_convert.py > resources.json
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: brew-resources
-          path: resources.txt
+          path: resources.json
           retention-days: 1
-      - name: Create pyproject.toml
-        run: |
-          cp Pipfile pyproject.toml
 
       - name: Tarball for release
         run: |
           mkdir dist
-          tar -czvf dist/random-number-release.tar.gz scripts pyproject.toml
+          tar -czvf dist/random-number-release.tar.gz scripts
 
       - name: SHAsum
         id: shasum
@@ -81,28 +78,26 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
+      - name: Jinja2
+        uses: cuchi/jinja2-action@v1.2.2
         with:
-          name: brew-resources
+          template: random-number.rb.j2
+          output_file: random-number.rb
+        env:
+          sha: ${{ needs.build.outputs.sha256 }}
+          version: ${{ github.ref_name }}
+
       - name: Clone Homebrew
         env:
-          SHA: ${{ needs.build.outputs.sha256 }}
+          sha: ${{ needs.build.outputs.sha256 }}
+          version: ${{ github.ref_name }}
         run: |
           git config --global user.email "michael@einreinhof.com"
           git config --global user.name "${{ github.actor }}"
           eval `ssh-agent -s`
           ssh-add - <<< '${{ secrets.HOMEBREW_DEPLOY_SSH }}'
           git clone git@github.com:alteredtech/homebrew-test-tap.git homebrew
-          ls
           cd homebrew
-          cat ../resources.txt > tools/resources.txt
-          cat <<EOF > tools/release.json
-          {
-            "version": "${{ github.ref_name }}",
-            "sha256": "$SHA"
-          }
-          EOF
-          git add tools/
-          git commit -m 'Another Tools release ${{ github.ref_name }}'
+          cat ../random-number.rb > Formula/random-number.rb
+          git commit Formula/random-number.rb -m 'Another Tools release ${{ github.ref_name }}'
           git push

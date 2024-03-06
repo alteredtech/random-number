@@ -1,0 +1,33 @@
+require 'json'
+
+
+class RandomNumber < Formula
+    include Language::Python::Virtualenv
+    desc "test repo for trying homebrew packaging"
+    homepage "https://github.com/alteredtech/random-number"
+    
+    version {{ env['version'] }}
+    license "MIT"
+
+    url "https://github.com/alteredtech/random-number/releases/download/{{ env['version'] }}/random-number-release.tar.gz"
+    sha256 {{ env['sha256'] }}
+    
+    depends_on "python@3.12"
+
+    {% for row in data %}
+    resource {{ row.name }} do
+        url {{ row.url }}
+        sha256 {{ row.sha }}
+    end
+    {% endfor %}
+  
+    def install
+      Dir["scripts/*.py"].each do |file|
+        bin.install file
+      end
+      virtualenv_install_with_resources
+    end
+  
+    test do
+    end
+  end
