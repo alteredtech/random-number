@@ -33,7 +33,7 @@ class RandomNumber < Formula
         bin.install_symlink libexec/"randnumber2.py" => "randnumber2"
 
         venv = virtualenv_create(libexec, python3)
-        venv.pip_install
+        venv.pip_install resources
         venv.pip_install_and_link buildpath
     end
   
