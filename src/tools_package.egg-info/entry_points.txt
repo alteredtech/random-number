@@ -1,0 +1,3 @@
+[console_scripts]
+randnumber = tools_package.randnumber:main
+randnumber2 = tools_package.randnumber2:main

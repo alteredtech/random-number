@@ -42,27 +42,35 @@ jobs:
           pipenv install
           pipenv run pip freeze > requirements.txt
 
-      - name: Convert Requirements file to list output
-        id: dependency_output
-        run: |
-          dep=$(sed 's/\(.*\)==\(.*\)/"\1==\2"/' requirements.txt | tr '\n' ',')
-          echo "req=${dep}" >> "$GITHUB_OUTPUT"
+      # - name: Convert Requirements file to list output
+      #   id: dependency_output
+      #   run: |
+      #     dep=$(sed 's/\(.*\)==\(.*\)/"\1==\2"/' requirements.txt | tr '\n' ',')
+      #     echo "dep=${dep}" >> "$GITHUB_OUTPUT"
       
-      - name: Template pyproject.toml
+      # - name: Template pyproject.toml
+      #   uses: cuchi/jinja2-action@v1.2.2
+      #   with:
+      #     template: templates/pyproject.toml.j2
+      #     output_file: pyproject.toml
+      #   env:
+      #     DEPENDENCIES: ${{ steps.dependency_output.outputs.dep }}
+      #     PACKAGE_VERSION: ${{ github.ref_name }}
+
+      - name: Template setup.cfg
         uses: cuchi/jinja2-action@v1.2.2
         with:
-          template: templates/pyproject.toml.j2
-          output_file: pyproject.toml
+          template: templates/setup.cfg.j2
+          output_file: setup.cfg
         env:
-          DEPENDENCIES: ${{ steps.dependency_output.outputs.dep }}
           PACKAGE_VERSION: ${{ github.ref_name }}
       
-      - name: Upload pyproject.toml
-        uses: actions/upload-artifact@v4
-        with:
-          name: py-project
-          path: pyproject.toml
-          retention-days: 1
+      # - name: Upload pyproject.toml
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: py-project
+      #     path: pyproject.toml
+      #     retention-days: 1
 
       - name: Create resource file
         id: create_resource

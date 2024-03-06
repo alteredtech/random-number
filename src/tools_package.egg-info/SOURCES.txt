@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+setup.py
+src/tools_package/__init__.py
+src/tools_package/randnumber.py
+src/tools_package/randnumber2.py
+src/tools_package.egg-info/PKG-INFO
+src/tools_package.egg-info/SOURCES.txt
+src/tools_package.egg-info/dependency_links.txt
+src/tools_package.egg-info/entry_points.txt
+src/tools_package.egg-info/requires.txt
+src/tools_package.egg-info/top_level.txt
