@@ -93,14 +93,13 @@ jobs:
           output_file: random-number.rb
           data_file: resources.json
           data_format: json
-        env:
-          sha: ${{ needs.build.outputs.sha256 }}
-          version: ${{ github.ref_name }}
+        # env:
+        #   sha: ${{ needs.build.outputs.sha256 }}
+        #   version: ${{ github.ref_name }}
 
       - name: Clone Homebrew
         env:
           sha: ${{ needs.build.outputs.sha256 }}
-          version: ${{ github.ref_name }}
         run: |
           git config --global user.email "michael@einreinhof.com"
           git config --global user.name "${{ github.actor }}"
@@ -109,5 +108,12 @@ jobs:
           git clone git@github.com:alteredtech/homebrew-test-tap.git homebrew
           cd homebrew
           cat ../random-number.rb > Formula/random-number.rb
-          git commit Formula/random-number.rb -m 'Another Tools release ${{ github.ref_name }}'
+          cat <<EOF > tools/release.json
+          {
+            "version": "${{ github.ref_name }}",
+            "sha256": "$SHA"
+          }
+          EOF
+          git add tools/
+          git commit -m 'Another Tools release ${{ github.ref_name }}'
           git push
