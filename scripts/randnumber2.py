@@ -9,3 +9,6 @@ def main():
     random_number = random.randint(1, int(end_value))
 
     print("Random number:", random_number)
+
+if __name__ == "__main__":
+    main()
