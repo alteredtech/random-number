@@ -1,16 +1,15 @@
-[tool.poetry.scripts]
-randnumber = 'random-number.randnumber:main'
-randnumber2 = 'random-number.randnumber2:main'
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
 
-[tool.poetry]
-name = "random-number"
-version = "v1.2.40"
-description = ""
-authors = ["Michael Einreinhof <michael@einreinhof.com>"]
+[packages]
+inquirer = "*"
+boto3 = "*"
+requests = "*"
 
-[tool.poetry.dependencies]
-python = "^3.12"
+[dev-packages]
 
-[build-system]
-requires = ["poetry_core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+[requires]
+python_version = "3.12"
+python_full_version = "3.12.2"
