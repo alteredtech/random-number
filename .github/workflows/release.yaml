@@ -118,7 +118,7 @@ jobs:
         run: pip install jinja2-cli
 
       - name: Render Jinja2 template
-        run: jinja2 random-number.rb.j2 -o random-number.rb --format=json resources.json
+        run: jinja2 templates/random-number.rb.j2 -o random-number.rb --format=json resources.json
 
       # - name: Jinja2
       #   uses: cuchi/jinja2-action@v1.2.2
