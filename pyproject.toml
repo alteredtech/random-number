@@ -1,15 +1,42 @@
-[[source]]
-url = "https://pypi.org/simple"
-verify_ssl = true
-name = "pypi"
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-[packages]
-inquirer = "*"
-boto3 = "*"
-requests = "*"
+[project]
+name = "tools_package"
+version = "v1.2.49"
+authors = [
+    { name = "Michael Einreinhof", email = "michael@einreinhof.com" },
+]
+description = "A small tools random number package"
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+]
 
-[dev-packages]
+[project.urls]
+Homepage = "https://github.com/alteredtech/random-number"
+Issues = "https://github.com/alteredtech/random-number/issues"
 
-[requires]
-python_version = "3.12"
-python_full_version = "3.12.2"
+[dependencies]
+blessed = "1.20.0"
+boto3 = "1.34.56"
+botocore = "1.34.56"
+certifi = "2024.2.2"
+charset-normalizer = "3.3.2"
+editor = "1.6.6"
+idna = "3.6"
+inquirer = "3.2.4"
+jmespath = "1.0.1"
+python-dateutil = "2.9.0.post0"
+readchar = "4.0.5"
+requests = "2.31.0"
+runs = "1.2.2"
+s3transfer = "0.10.0"
+six = "1.16.0"
+urllib3 = "2.0.7"
+wcwidth = "0.2.13"
+xmod = "1.8.1"
