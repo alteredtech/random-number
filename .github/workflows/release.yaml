@@ -53,7 +53,7 @@ jobs:
       - name: Tarball for release
         run: |
           mkdir dist
-          tar -czvf dist/random-number-release.tar.gz scripts
+          tar -czvf dist/random-number-release.tar.gz scripts pyproject.toml
 
       - name: SHAsum
         id: shasum
