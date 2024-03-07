@@ -46,10 +46,11 @@ jobs:
         id: list_scripts
         run: |
           chmod +x ./packaging/scriptsetup.py
-          python packaging/pypackage_convert.py > scripts.txt
+          python packaging/scriptsetup.py > scripts.txt
           cat scripts.txt
           scripts=$(cat scripts.txt)
           echo "scripts=${scripts}" >> "$GITHUB_OUTPUT"
+
       - name: Template setup.py
         uses: cuchi/jinja2-action@v1.2.2
         with:
@@ -57,6 +58,14 @@ jobs:
           output_file: setup.py
         env:
           SCRIPTS: ${{ steps.list_scripts.outputs.scripts }}
+
+      - name: Upload setup.py
+        uses: actions/upload-artifact@v4
+        with:
+          name: setup
+          path: setup.py
+          retention-days: 1
+          
       # - name: Convert Requirements file to list output
       #   id: dependency_output
       #   run: |
