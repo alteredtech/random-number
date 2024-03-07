@@ -611,15 +611,6 @@
             "markers": "python_version >= '3.9'",
             "version": "==2.2.1"
         },
-        "paramiko": {
-            "hashes": [
-                "sha256:43f0b51115a896f9c00f59618023484cb3a14b98bbceab43394a39c6739b7ee7",
-                "sha256:aac08f26a31dc4dffd92821527d1682d99d52f9ef6851968114a8728f3c274d3"
-            ],
-            "index": "pypi",
-            "markers": "python_version >= '3.6'",
-            "version": "==3.4.0"
-        },
         "pendulum": {
             "hashes": [
                 "sha256:04a1094a5aa1daa34a6b57c865b25f691848c61583fb22722a4df5699f6bf74c",
