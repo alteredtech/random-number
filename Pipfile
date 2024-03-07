@@ -4,16 +4,28 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-inquirer = "*"
 boto3 = "*"
+argparse = "*"
+botocore = "*"
+textual = "*"
+keyring = "*"
+configparser = "*"
 requests = "*"
-numpy = "1.25"
-pytest = "*"
-hypothesis = "*"
-pipdeptree = "*"
+datetime = "*"
+jira = "*"
+simple-salesforce = "*"
+paramiko = "*"
+tabulate = "*"
+typing = "*"
+dropbox = "*"
+tqdm = "*"
+prettytable = "*"
+interactive = "*"
+slack-sdk = "*"
+sqlparse = "*"
+pymysql = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.12"
-python_full_version = "3.12.2"
+python_version = "3.11"
