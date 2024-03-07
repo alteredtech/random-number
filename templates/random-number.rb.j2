@@ -10,7 +10,7 @@ class RandomNumber < Formula
     version release['version']
     license "MIT"
 
-    url "https://github.com/alteredtech/random-number/releases/download/#{version}/tools_package-#{version}.tar.gz"
+    url "https://github.com/alteredtech/random-number/releases/download/#{version}/tools-core-#{version}.tar.gz"
     sha256 release['sha256']
     
     depends_on "python@3.12"
