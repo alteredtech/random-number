@@ -13,9 +13,6 @@ setup(
     package_dir={'':'src'},
     packages=find_packages('src'),
     entry_points={
-        'console_scripts': [
-            'randnumber=tools_package.randnumber:main',
-            'randnumber2=tools_package.randnumber2:main'
-        ],
+        'console_scripts': {{env['SCRIPTS']}},
     },
 )

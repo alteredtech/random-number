@@ -7,6 +7,7 @@ name = "pypi"
 inquirer = "*"
 boto3 = "*"
 requests = "*"
+numpy = "*"
 
 [dev-packages]
 

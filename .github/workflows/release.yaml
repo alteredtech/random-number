@@ -41,7 +41,22 @@ jobs:
           pip install pipenv requests
           pipenv install
           pipenv run pip freeze > requirements.txt
-
+      
+      - name: Gather Script info for setup
+        id: list_scripts
+        run: |
+          chmod +x ./packaging/scriptsetup.py
+          python packaging/pypackage_convert.py > scripts.txt
+          cat scripts.txt
+          scripts=$(cat scripts.txt)
+          echo "scripts=${scripts}" >> "$GITHUB_OUTPUT"
+      - name: Template setup.py
+        uses: cuchi/jinja2-action@v1.2.2
+        with:
+          template: templates/setup.py.j2
+          output_file: setup.py
+        env:
+          SCRIPTS: ${{ steps.list_scripts.outputs.scripts }}
       # - name: Convert Requirements file to list output
       #   id: dependency_output
       #   run: |
@@ -75,9 +90,8 @@ jobs:
       - name: Create resource file
         id: create_resource
         run: |
-          ls
-          chmod +x ./pypackage_convert.py
-          python ./pypackage_convert.py > resources.json
+          chmod +x packaging/pypackage_convert.py
+          python packaging/pypackage_convert.py > resources.json
 
       - name: Upload resources.json
         uses: actions/upload-artifact@v4

@@ -1,4 +1,3 @@
-#!/opt/homebrew/bin python3
 #!/usr/bin/env python3
 
 import random
@@ -13,3 +12,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    print("This is to see if command runs here2")

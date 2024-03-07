@@ -9,3 +9,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    print("This is to see if command runs here")

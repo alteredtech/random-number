@@ -3,3 +3,4 @@ resources.txt
 resources.json
 dist
 test.py
+*.egg-info/
