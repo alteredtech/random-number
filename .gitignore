@@ -4,3 +4,4 @@ resources.json
 dist
 test.py
 *.egg-info/
+TODO.md
