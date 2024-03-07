@@ -7,9 +7,10 @@ name = "pypi"
 inquirer = "*"
 boto3 = "*"
 requests = "*"
-numpy = "*"
+numpy = "1.25"
 pytest = "*"
 hypothesis = "*"
+pipdeptree = "*"
 
 [dev-packages]
 
