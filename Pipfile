@@ -32,9 +32,6 @@ simple-term-menu = "*"
 requests-aws-sign = "*"
 pendulum = "*"
 pandas = "*"
-splunk-sdk = "*"
-mysql-connector-python = "*"
-setuptools = "*"
 
 [dev-packages]
 
