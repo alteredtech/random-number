@@ -18,7 +18,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.12.2
+          python-version: 3.11.2
 
       - name: Ensure pip is installed
         run: |
@@ -65,7 +65,7 @@ jobs:
           name: setup
           path: setup.py
           retention-days: 1
-          
+
       # - name: Convert Requirements file to list output
       #   id: dependency_output
       #   run: |
