@@ -24,6 +24,16 @@ interactive = "*"
 slack-sdk = "*"
 sqlparse = "*"
 pymysql = "*"
+rich = "*"
+yaspin = "*"
+inquirerpy = "*"
+biplist = "*"
+simple-term-menu = "*"
+requests-aws-sign = "*"
+pendulum = "*"
+pandas = "*"
+splunk-sdk = "*"
+mysql-connector-python = "*"
 
 [dev-packages]
 
