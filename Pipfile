@@ -32,6 +32,7 @@ pendulum = "*"
 paramiko = "*"
 simple-salesforce = "*"
 urllib3 = "*"
+pandas = "*"
 
 [dev-packages]
 

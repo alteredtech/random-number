@@ -18,6 +18,7 @@ class RandomNumber < Formula
     depends_on "rust" => :build
     depends_on "python-certifi"
     depends_on "python-cryptography"
+    depends_on "mozjpeg"
 
     {% for package in resources %}
     resource "{{ package.name }}" do
