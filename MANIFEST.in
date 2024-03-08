@@ -1,2 +1,2 @@
 include src/*
-include requirements.txt
+include setup-requirements/requirements.txt
