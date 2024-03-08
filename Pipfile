@@ -29,6 +29,9 @@ biplist = "*"
 simple-term-menu = "*"
 requests-aws-sign = "*"
 pendulum = "*"
+paramiko = "*"
+simple-salesforce = "*"
+urllib3 = "*"
 
 [dev-packages]
 
