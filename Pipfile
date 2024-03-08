@@ -33,6 +33,7 @@ paramiko = "*"
 simple-salesforce = "*"
 urllib3 = "*"
 pandas = "*"
+stone = "==3.2.1"
 
 [dev-packages]
 
