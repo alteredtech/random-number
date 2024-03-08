@@ -40,7 +40,6 @@ jobs:
           sudo apt-get install python3-pip
           pip install pipenv requests
           pipenv install
-          echo "\n" >> requirements.txt
           pipenv run pip freeze >> requirements.txt
       
       - name: Gather Script info for setup
