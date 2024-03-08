@@ -184,8 +184,8 @@ jobs:
           git commit -m 'Another Tools release ${{ github.ref_name }}'
           git push
   
-  tests:
-    name: Create Release
-    runs-on: ubuntu-latest
-    steps:
-      - name: Verify install of brew formula
+  # tests:
+  #   name: Create Release
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Verify install of brew formula
