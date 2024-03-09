@@ -166,14 +166,14 @@ jobs:
           git clone git@github.com:alteredtech/homebrew-test-tap.git homebrew
           cd homebrew
           mkdir -p Formula/tools
-          cat ../random-number-dev.rb > Formula/tools/random-number@dev.rb
+          cat ../random-number-dev.rb > Formula/random-number@dev.rb
           cat <<EOF > tools/release-dev.json
           {
             "version": "${{needs.build.outputs.dev-build}}",
             "sha256": "$SHA"
           }
           EOF
-          git add tools/ Formula/tools/random-number*.rb
+          git add tools/ Formula/random-number*.rb
           git commit -m 'Another Tools release ${{ github.ref_name }}'
           git push
 
