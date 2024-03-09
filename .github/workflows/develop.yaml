@@ -17,7 +17,13 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       sha256: ${{ steps.shasum.outputs.sha256 }}
+      sha-short: ${{ steps.shasum-short.outputs.sha-short }}
     steps:
+      # SHA sort of commit
+      - name: SHAsum short dev
+        id: shasum-short
+        run: |
+            echo "sha-short=$(git rev-parse HEAD | cut -c1-8).dev" >> "$GITHUB_OUTPUT"
       # Checkout Code
       - name: Checkout code
         uses: actions/checkout@v3
@@ -69,7 +75,7 @@ jobs:
           template: templates/setup.cfg.j2
           output_file: setup.cfg
         env:
-          PACKAGE_VERSION: ${{ github.ref_name }}
+          PACKAGE_VERSION: ${{ github.ref_name == 'refs/tags/v*' && github.ref_name || steps.shasum-short.outputs.sha-short }}
       # Create resource file
       - name: Create resource file
         id: create_resource
