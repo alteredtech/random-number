@@ -6,7 +6,7 @@ class RandomNumberDev < Formula
     desc "test repo for trying homebrew packaging"
     homepage "https://github.com/alteredtech/random-number"
 
-    release = JSON.parse(File.open(File.expand_path('../tools/release-dev.json', __FILE__)).read)
+    release = JSON.parse(File.open(File.expand_path('../../tools/release-dev.json', __FILE__)).read)
     version release['version']
     license "MIT"
 
