@@ -9,7 +9,7 @@ def main():
     """Get input from user to generate random number"""
 
     user_answer = inquirer.text(message="Enter a number:").execute()
-    
+
     print(random.randint(1, int(user_answer)))
 
     multiply(user_answer)
