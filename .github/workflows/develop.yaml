@@ -23,7 +23,7 @@ jobs:
       - name: Get current date
         id: date
         run: |
-          date_form=date::$(date +'%Y.%m.%d')
+          date_form=$(date +'%Y.%m.%d')
           echo "date=${date_form}" >> "$GITHUB_OUTPUT
       # Create dev version name
       - name: Create Dev version name
