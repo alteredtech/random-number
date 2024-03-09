@@ -156,6 +156,7 @@ jobs:
         if: ${{ github.ref == 'refs/heads/develop' }}
         run: jinja2 templates/random-number-dev.rb.j2 -o random-number-dev.rb --format=json resources.json
       # Git push release.json and formula to homebrew repo
+      # TODO find a way to use @ in the file name see ant@
       - name: Clone Homebrew
         if: ${{ github.ref == 'refs/heads/develop' }}
         env:
