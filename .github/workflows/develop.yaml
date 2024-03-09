@@ -105,7 +105,7 @@ jobs:
         id: create_release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ github.ref}}
+          tag_name: ${{ github.ref_name == 'refs/tags/v*' && github.ref || steps.dev-version.outputs.dev-build }}
           name: Release ${{ github.ref_name }}
           generate_release_notes: true
           draft: false
@@ -209,7 +209,7 @@ jobs:
 
   ### check brew install
   tests:
-    name: Create Release
+    name: Test Develop Brew formula
     runs-on: ubuntu-latest
     if: ${{ github.ref_name == 'refs/head/develop'}}
     steps:
