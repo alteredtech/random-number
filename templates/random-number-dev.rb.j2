@@ -1,7 +1,7 @@
 
 require 'json'
 
-class RandomNumberATdev < Formula
+class RandomNumber@dev < Formula
     include Language::Python::Virtualenv
     desc "test repo for trying homebrew packaging"
     homepage "https://github.com/alteredtech/random-number"
