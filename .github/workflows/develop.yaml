@@ -106,7 +106,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ github.ref == 'refs/tags/v*' && github.ref_name || steps.dev-version.outputs.dev-build }}
-          name: Release ${{ github.ref_name }}
+          name: Release ${{ github.ref == 'refs/tags/v*' && github.ref_name || steps.dev-version.outputs.dev-build }}
           generate_release_notes: true
           draft: false
           prerelease: false
@@ -117,7 +117,7 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file_glob: true
           file: dist/*
-          tag: ${{ github.ref }}
+          tag: ${{ github.ref == 'refs/tags/v*' && github.ref_name || steps.dev-version.outputs.dev-build }}
           overwrite: true
       # SHA sum Package
       - name: SHAsum
@@ -211,7 +211,7 @@ jobs:
   tests:
     name: Test Develop Brew formula
     runs-on: ubuntu-latest
-    if: ${{ github.ref == 'refs/head/develop'}}
+    if: ${{ github.ref != 'refs/tags/v*' && github.ref_name || steps.dev-version.outputs.dev-build }}
     steps:
     # Install Homebrew on Linux
     - name: Install Homebrew
