@@ -1,13 +1,14 @@
 """This is a basic random number multiplyer."""
+
 #!/usr/bin/env python3
 
 import random
 
 
 def main():
+    """Main entry point and does the math."""
 
     
-    """Main entry point and does the math."""
     print("Showing random number between 1-5 \
           multiplied by a random number between 1-5")
 

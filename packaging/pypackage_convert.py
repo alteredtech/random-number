@@ -1,4 +1,5 @@
 """Generates resources json on pip requirements."""
+
 #!/usr/bin/env python
 
 import json
@@ -6,9 +7,8 @@ import requests
 
 
 def generate_resource_blocks(requirements_file="requirements.txt"):
-
-
     """Main logic to convert."""
+
     pypi_base_url = "https://pypi.org/pypi"
 
     resource_blocks = []
@@ -30,8 +30,10 @@ def generate_resource_blocks(requirements_file="requirements.txt"):
             response = requests.get(pkg_info_url)
 
             if response.status_code != 200:
-                print(f"Failed to fetch package \
-                      info for {pkg_name}=={version}")
+                print(
+                    f"Failed to fetch package \
+                    info for {pkg_name}=={version}"
+                )
                 continue
 
             pkg_info = response.json()
@@ -66,7 +68,6 @@ def generate_resource_blocks(requirements_file="requirements.txt"):
 
 if __name__ == "__main__":
     resources_text = generate_resource_blocks()
-
 
     final_json = {"resources": resources_text}
     print(json.dumps(final_json))
