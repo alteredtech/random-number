@@ -32,7 +32,7 @@ def generate_resource_blocks(requirements_file="requirements.txt"):
             if response.status_code != 200:
                 print(
                     f"Failed to fetch package \
-                    info for {pkg_name}=={version}"
+                      info for {pkg_name}=={version}"
                 )
                 continue
 
@@ -40,10 +40,10 @@ def generate_resource_blocks(requirements_file="requirements.txt"):
             # Select the tar.gz distribution URL
             selected_url = next(
                 (
-                    url_info 
+                    url_info
                     for url_info in pkg_info["urls"]
                     if url_info["url"].endswith(".tar.gz")
-                ), 
+                ),
                 None,
             )
 
