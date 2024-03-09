@@ -79,7 +79,7 @@ jobs:
           template: templates/setup.cfg.j2
           output_file: setup.cfg
         env:
-          PACKAGE_VERSION: ${{ github.ref_name == 'refs/tags/v*' && github.ref_name || steps.dev-version.outputs.dev-build }}
+          PACKAGE_VERSION: ${{ github.ref == 'refs/tags/v*' && github.ref_name || steps.dev-version.outputs.dev-build }}
       # Create resource file
       - name: Create resource file
         id: create_resource
@@ -105,7 +105,7 @@ jobs:
         id: create_release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ github.ref_name == 'refs/tags/v*' && github.ref || steps.dev-version.outputs.dev-build }}
+          tag_name: ${{ github.ref == 'refs/tags/v*' && github.ref_name || steps.dev-version.outputs.dev-build }}
           name: Release ${{ github.ref_name }}
           generate_release_notes: true
           draft: false
@@ -166,10 +166,10 @@ jobs:
           git clone git@github.com:alteredtech/homebrew-test-tap.git homebrew
           cd homebrew
           mkdir -p Formula/tools
-          cat ../random-number-dev.rb > Formula/tools/random-number@DEV.rb
+          cat ../random-number-dev.rb > Formula/tools/random-number@dev.rb
           cat <<EOF > tools/release-dev.json
           {
-            "version": "${{ github.ref_name }}",
+            "version": "${{needs.build.outputs.dev-build}}",
             "sha256": "$SHA"
           }
           EOF
@@ -194,15 +194,15 @@ jobs:
           ssh-add - <<< '${{ secrets.HOMEBREW_DEPLOY_SSH }}'
           git clone git@github.com:alteredtech/homebrew-test-tap.git homebrew
           cd homebrew
-          mkdir -p Formula/tools
-          cat ../random-number.rb > Formula/tools/random-number.rb
+          mkdir -p Formula
+          cat ../random-number.rb > Formula/random-number.rb
           cat <<EOF > tools/release.json
           {
             "version": "${{ github.ref_name }}",
             "sha256": "$SHA"
           }
           EOF
-          git add tools/ Formula/tools/random-number*.rb
+          git add tools/ Formula/random-number*.rb
           git commit -m 'Another Tools release ${{ github.ref_name }}'
           git push
 
@@ -211,7 +211,7 @@ jobs:
   tests:
     name: Test Develop Brew formula
     runs-on: ubuntu-latest
-    if: ${{ github.ref_name == 'refs/head/develop'}}
+    if: ${{ github.ref == 'refs/head/develop'}}
     steps:
     # Install Homebrew on Linux
     - name: Install Homebrew
@@ -228,7 +228,7 @@ jobs:
     # Install the Formula and output the log to a file
     - name: install formula
       run: |
-        brew update && brew install random-number@DEV 2>&1 | tee install-${{github.ref_name}}.log
+        brew update && brew install random-number@dev 2>&1 | tee install-${{github.ref_name}}.log
     # Upload install log Artifact
     - name: Upload log
       uses: actions/upload-artifact@v4
