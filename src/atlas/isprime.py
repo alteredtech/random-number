@@ -1,29 +1,17 @@
 """Checks to see if number is prime"""
 
-#!/usr/bin/env python3
-
-import time
-from rich.console import Console
-from primePy import primes
+#!/usr/bin/env python3 # noqa: E265
 
 
 def main():
-    # Example usage
+    """Main entry point"""
 
-    # console = Console()
-    # number = 10**100
-    # with console.status("[bold green]Calculating...") as status:
-    #     for i in range(number, 67, -1):
-    #         status.update(f"Calculating... {i}")
-    #         if primes.check(i):
-    #             print(f"{i} is prime")
-    #             print(f"perfect: {perfect_number(i)}")
-    #         if i % 1000 == 0:
-    #             time.sleep(1)
     print(perfect_number(6))
 
 
 def is_prime(n):
+    """Check if number is prime"""
+
     if n <= 1:
         return False
     for i in range(int(n**0.5) + 1, 2, -1):
@@ -34,6 +22,8 @@ def is_prime(n):
 
 
 def perfect_number(n):
+    """Check if number is perfect"""
+
     sum = (2**n - 1) * (2**(n-1))
     return sum
 

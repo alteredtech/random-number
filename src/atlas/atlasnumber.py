@@ -1,6 +1,6 @@
 """This is a basic random number multiplyer."""
 
-#!/usr/bin/env python3
+#!/usr/bin/env python3 # noqa: E265
 
 import random
 
@@ -8,9 +8,10 @@ import random
 def main():
     """Main entry point and does the math."""
 
-    
-    print("Showing random number between 1-5 \
-          multiplied by a random number between 1-5")
+    print(
+        "Showing random number between 1-5 \
+        multiplied by a random number between 1-5"
+    )
 
     print(random.randrange(1, 5) * random.randrange(1, 5))
 
