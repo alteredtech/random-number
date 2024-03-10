@@ -5,6 +5,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # Checkout Code
+      - name: Checkout code
+        uses: actions/checkout@v3
       - uses: sgpublic/delete-release-action@v1.1
         with:
           release-drop: true
