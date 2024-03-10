@@ -1,7 +1,5 @@
-on:
-  push:
-    branches:
-      - DOES_NOT_MATTER
+on: workflow_dispatch
+
 
 jobs:
   build:
