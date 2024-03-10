@@ -212,6 +212,7 @@ jobs:
 
   ### check brew install
   tests:
+    needs: update-homebrew
     name: Test Develop Brew formula
     runs-on: ubuntu-latest
     if: ${{ github.ref != 'refs/branch/main' || github.ref != 'refs/tag/v*' }}
@@ -225,7 +226,6 @@ jobs:
         (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/runner/.bashrc
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
         source /home/runner/.bashrc
-        apt-get install build-essential
     # Tap the formula
     - name: tap brew
       run: |
