@@ -101,7 +101,7 @@ jobs:
           python3 -m pip install --upgrade build
           python3 -m build
           cd dist
-          mv tools-core-*.tar.gz tools-core-${{github.ref_name}}.tar.gz
+          mv tools-core-*.tar.gz tools-core-${{ github.ref == 'refs/tags/v*' && github.ref_name || steps.dev-version.outputs.dev-build }}.tar.gz
       # Create Release
       - name: Create release
         id: create_release
@@ -214,7 +214,7 @@ jobs:
   tests:
     name: Test Develop Brew formula
     runs-on: ubuntu-latest
-    if: ${{ github.ref == 'refs/tags/*dev*' }}
+    if: ${{ github.ref != 'refs/branch/main' || github.ref != 'refs/tag/v*' }}
     steps:
     # Install Homebrew on Linux
     - name: Install Homebrew
