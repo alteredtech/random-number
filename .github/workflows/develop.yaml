@@ -169,7 +169,7 @@ jobs:
           git clone git@github.com:alteredtech/homebrew-test-tap.git homebrew
           cd homebrew
           mkdir -p Formula/tools
-          cat ../random-number-dev.rb > Formula/random-number@dev.rb
+          cat ../random-number-dev.rb > Formula/random-number@9.rb
           cat <<EOF > tools/release-dev.json
           {
             "version": "${{needs.build.outputs.dev-build}}",
