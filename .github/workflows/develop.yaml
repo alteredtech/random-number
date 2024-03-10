@@ -223,9 +223,9 @@ jobs:
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
         test -d /home/runner/.linuxbrew && eval "$(/home/runner/.linuxbrew/bin/brew shellenv)"
-        (echo; echo 'eval "$(/home/runner/.linuxbrew/bin/brew shellenv)"') >> /home/runner/.bashrc
+        (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/runner/.bashrc
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-        source /home/runner/.bashrc
+        exec bash
     # Tap the formula
     - name: tap brew
       run: |
