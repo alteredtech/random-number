@@ -3,8 +3,7 @@ on:
   push:
     branches:
       - develop
-    tags:
-      - 'v*'
+
 jobs:
 
   ## part 1
@@ -17,7 +16,19 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       sha256: ${{ steps.shasum.outputs.sha256 }}
+      dev-build: ${{ steps.dev-version.outputs.dev-build }}
     steps:
+      # Get current date for versioning
+      - name: Get current date
+        id: date
+        run: |
+          date_form=$(date +'%Y.%m.%d')
+          echo "date=${date_form}" >> "$GITHUB_OUTPUT"
+      # Create dev version name
+      - name: Create Dev version name
+        id: dev-version
+        run: |
+            echo "dev-build=${{steps.date.outputs.date}}dev${{github.run_number}}" >> "$GITHUB_OUTPUT"
       # Checkout Code
       - name: Checkout code
         uses: actions/checkout@v3
@@ -69,7 +80,7 @@ jobs:
           template: templates/setup.cfg.j2
           output_file: setup.cfg
         env:
-          PACKAGE_VERSION: ${{ github.ref_name }}
+          PACKAGE_VERSION: ${{ steps.dev-version.outputs.dev-build }}
       # Create resource file
       - name: Create resource file
         id: create_resource
@@ -89,17 +100,17 @@ jobs:
           python3 -m pip install --upgrade build
           python3 -m build
           cd dist
-          mv tools-core-*.tar.gz tools-core-${{github.ref_name}}.tar.gz
-      # Create Release
+          mv tools-core-*.tar.gz tools-core-${{ steps.dev-version.outputs.dev-build }}.tar.gz
+      # Create PreRelease
       - name: Create release
-        id: create_release
+        id: create_prerelease
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ github.ref}}
-          name: Release ${{ github.ref_name }}
+          tag_name: ${{ steps.dev-version.outputs.dev-build }}
+          name: Release ${{ steps.dev-version.outputs.dev-build }}
           generate_release_notes: true
           draft: false
-          prerelease: false
+          prerelease: true
       # Upload Package to Release
       - name: Upload tar to release
         uses: svenstaro/upload-release-action@v2
@@ -107,18 +118,17 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file_glob: true
           file: dist/*
-          tag: ${{ github.ref }}
+          tag: ${{ steps.dev-version.outputs.dev-build }}
           overwrite: true
       # SHA sum Package
       - name: SHAsum
         id: shasum
         run: |
           cd dist
-          shasum -a 256 tools-core-${{github.ref_name}}.tar.gz > shasum-package-release
+          shasum -a 256 tools-core-${{ steps.dev-version.outputs.dev-build }}.tar.gz > shasum-package-release
           cat shasum-package-release|cut -c1-64
           shasum=$(cat shasum-package-release|cut -c1-64)
           echo "sha256=${shasum}" >> "$GITHUB_OUTPUT"
-
 
   update-homebrew:
     name: Update Homebrew
@@ -141,11 +151,9 @@ jobs:
       # Create Release based on develop or tag
       # Template Brew Formula for DEVELOP
       - name: Render Jinja2 template
-        if: ${{ github.ref == 'refs/heads/develop' }}
         run: jinja2 templates/random-number-dev.rb.j2 -o random-number-dev.rb --format=json resources.json
       # Git push release.json and formula to homebrew repo
       - name: Clone Homebrew
-        if: ${{ github.ref == 'refs/heads/develop' }}
         env:
           SHA: ${{ needs.build.outputs.sha256 }}
         run: |
@@ -156,73 +164,54 @@ jobs:
           git clone git@github.com:alteredtech/homebrew-test-tap.git homebrew
           cd homebrew
           mkdir -p Formula/tools
-          cat ../random-number-dev.rb > Formula/tools/random-number@DEV.rb
+          cat ../random-number-dev.rb > Formula/random-number@9.rb
           cat <<EOF > tools/release-dev.json
           {
-            "version": "${{ github.ref_name }}",
+            "version": "${{needs.build.outputs.dev-build}}",
             "sha256": "$SHA"
           }
           EOF
-          git add tools/ Formula/tools/random-number*.rb
-          git commit -m 'Another Tools release ${{ github.ref_name }}'
-          git push
-
-
-      # Template Brew Formula for Tag Release
-      - name: Render Jinja2 template
-        if: startsWith(github.ref, 'refs/tags/v')
-        run: jinja2 templates/random-number.rb.j2 -o random-number.rb --format=json resources.json
-      # Git push release.json and formula to homebrew repo
-      - name: Clone Homebrew
-        if: startsWith(github.ref, 'refs/tags/v')
-        env:
-          SHA: ${{ needs.build.outputs.sha256 }}
-        run: |
-          git config --global user.email "michael@einreinhof.com"
-          git config --global user.name "${{ github.actor }}"
-          eval `ssh-agent -s`
-          ssh-add - <<< '${{ secrets.HOMEBREW_DEPLOY_SSH }}'
-          git clone git@github.com:alteredtech/homebrew-test-tap.git homebrew
-          cd homebrew
-          mkdir -p Formula/tools
-          cat ../random-number.rb > Formula/tools/random-number.rb
-          cat <<EOF > tools/release.json
-          {
-            "version": "${{ github.ref_name }}",
-            "sha256": "$SHA"
-          }
-          EOF
-          git add tools/ Formula/tools/random-number*.rb
+          git add tools/ Formula/random-number*.rb
           git commit -m 'Another Tools release ${{ github.ref_name }}'
           git push
 
 
   ### check brew install
   tests:
-    name: Create Release
+    needs: update-homebrew
+    name: Test Develop Brew formula
     runs-on: ubuntu-latest
-    if: ${{ github.ref_name == 'refs/head/develop'}}
     steps:
     # Install Homebrew on Linux
-    - name: Install Homebrew
-      run: |
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
-        test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-        echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
-        source ~/.bashrc
-    # Tap the formula
+    - name: Set up Homebrew
+      id: set-up-homebrew
+      uses: Homebrew/actions/setup-homebrew@master
+    # Tap the Homebrew Formula
     - name: tap brew
       run: |
         brew tap alteredtech/test-tap
     # Install the Formula and output the log to a file
     - name: install formula
       run: |
-        brew update && brew install random-number@DEV 2>&1 | tee install-${{github.ref_name}}.log
+        brew update && brew install random-number@9 2>&1 | tee install-${{ steps.dev-version.outputs.dev-build }}.log
     # Upload install log Artifact
     - name: Upload log
       uses: actions/upload-artifact@v4
       with:
         name: brew-install-log
-        path: install-${{github.ref_name}}.log
+        path: install-${{ steps.dev-version.outputs.dev-build }}.log
         retention-days: 5
+  
+  # Remove the release
+  remove-release:
+    name: Remove Release
+    needs: tests
+    runs-on: ubuntu-latest
+    if: failure()
+    steps:
+      - uses: ClementTsang/delete-tag-and-release@v0.3.1
+        with:
+          delete_release: true # default: false
+          tag_name: ${{ steps.dev-version.outputs.dev-build }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

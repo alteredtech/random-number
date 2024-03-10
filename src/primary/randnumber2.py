@@ -8,7 +8,6 @@ import random
 def main():
     """Prints a random number between a small number and large number."""
 
-
     end_value = 545
 
     random_number = random.randint(1, int(end_value))

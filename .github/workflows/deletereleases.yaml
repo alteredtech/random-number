@@ -1,0 +1,19 @@
+on:
+  push:
+    branches:
+      - DOES_NOT_MATTER
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: sgpublic/delete-release-action@v1.1
+        with:
+          release-drop: true
+          release-keep-count: 3
+          release-drop-tag: true
+          pre-release-drop: true
+          pre-release-keep-count: 3
+          pre-release-drop-tag: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

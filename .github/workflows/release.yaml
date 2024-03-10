@@ -1,11 +1,16 @@
-# .github/workflows/release.yaml
-
+# develop use dev in the naming
 on:
   push:
     tags:
-      - 'dfjsakl'
+      - 'v*'
 
 jobs:
+
+  ## part 1
+  ### lint the code
+  lint-actions:
+    uses: ./.github/workflows/lint.yaml
+
   build:
     name: Create Release
     runs-on: ubuntu-latest
@@ -83,13 +88,13 @@ jobs:
           python3 -m pip install --upgrade build
           python3 -m build
           cd dist
-          mv tools-core-*.tar.gz tools-core-${{github.ref_name}}.tar.gz
+          mv tools-core-*.tar.gz tools-core-${{ github.ref_name }}.tar.gz
       # Create Release
       - name: Create release
         id: create_release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ github.ref}}
+          tag_name: ${{ github.ref_name }}
           name: Release ${{ github.ref_name }}
           generate_release_notes: true
           draft: false
@@ -101,18 +106,17 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file_glob: true
           file: dist/*
-          tag: ${{ github.ref }}
+          tag: ${{ github.ref_name }}
           overwrite: true
       # SHA sum Package
       - name: SHAsum
         id: shasum
         run: |
           cd dist
-          shasum -a 256 tools-core-*.tar.gz > shasum-package-release
+          shasum -a 256 tools-core-${{ github.ref_name }}.tar.gz > shasum-package-release
           cat shasum-package-release|cut -c1-64
           shasum=$(cat shasum-package-release|cut -c1-64)
           echo "sha256=${shasum}" >> "$GITHUB_OUTPUT"
-
 
   update-homebrew:
     name: Update Homebrew
@@ -130,7 +134,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: brew-resources
-      # Template Brew Formula
+      # Template Brew Formula for Tag Release
       - name: Render Jinja2 template
         run: jinja2 templates/random-number.rb.j2 -o random-number.rb --format=json resources.json
       # Git push release.json and formula to homebrew repo
@@ -144,6 +148,7 @@ jobs:
           ssh-add - <<< '${{ secrets.HOMEBREW_DEPLOY_SSH }}'
           git clone git@github.com:alteredtech/homebrew-test-tap.git homebrew
           cd homebrew
+          mkdir -p Formula
           cat ../random-number.rb > Formula/random-number.rb
           cat <<EOF > tools/release.json
           {
@@ -151,6 +156,6 @@ jobs:
             "sha256": "$SHA"
           }
           EOF
-          git add tools/ Formula/random-number.rb
+          git add tools/ Formula/random-number*.rb
           git commit -m 'Another Tools release ${{ github.ref_name }}'
           git push
