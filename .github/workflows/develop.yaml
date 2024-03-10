@@ -214,18 +214,18 @@ jobs:
   tests:
     needs: update-homebrew
     name: Test Develop Brew formula
-    runs-on: ubuntu-latest
+    runs-on: homebrew/brew
     if: ${{ github.ref != 'refs/branch/main' || github.ref != 'refs/tag/v*' }}
     steps:
     # Install Homebrew on Linux
-    - name: Install Homebrew
-      run: |
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
-        test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-        (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/runner/.bashrc
-        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-        source /home/runner/.bashrc
+    # - name: Install Homebrew
+    #   run: |
+    #     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    #     test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+    #     test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    #     (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/runner/.bashrc
+    #     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    #     source /home/runner/.bashrc
     # Tap the formula
     - name: tap brew
       run: |
