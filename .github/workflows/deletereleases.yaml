@@ -6,16 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Checkout Code
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - uses: sgpublic/delete-release-action@v1.1
+      - uses: dev-drprasad/delete-older-releases@v0.3.2
         with:
-          repo: alteredtech/random-number
-          release-drop: true
-          release-keep-count: 3
-          release-drop-tag: true
-          pre-release-drop: true
-          pre-release-keep-count: 3
-          pre-release-drop-tag: true
+          keep_latest: 3
+          delete_tags: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
