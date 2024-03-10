@@ -126,7 +126,7 @@ jobs:
         id: shasum
         run: |
           cd dist
-          shasum -a 256 tools-core-${{github.ref_name}}.tar.gz > shasum-package-release
+          shasum -a 256 tools-core-${{ github.ref == 'refs/tags/v*' && github.ref_name || steps.dev-version.outputs.dev-build }}.tar.gz > shasum-package-release
           cat shasum-package-release|cut -c1-64
           shasum=$(cat shasum-package-release|cut -c1-64)
           echo "sha256=${shasum}" >> "$GITHUB_OUTPUT"
@@ -222,8 +222,10 @@ jobs:
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
         test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-        echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
-        source ~/.bashrc
+        (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/runner/.bashrc
+        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+        source /home/runner/.bashrc
+        apt-get install build-essential
     # Tap the formula
     - name: tap brew
       run: |
@@ -231,11 +233,11 @@ jobs:
     # Install the Formula and output the log to a file
     - name: install formula
       run: |
-        brew update && brew install random-number@dev 2>&1 | tee install-${{github.ref_name}}.log
+        brew update && brew install random-number@9 2>&1 | tee install-${{ github.ref == 'refs/tags/v*' && github.ref_name || steps.dev-version.outputs.dev-build }}.log
     # Upload install log Artifact
     - name: Upload log
       uses: actions/upload-artifact@v4
       with:
         name: brew-install-log
-        path: install-${{github.ref_name}}.log
+        path: install-${{ github.ref == 'refs/tags/v*' && github.ref_name || steps.dev-version.outputs.dev-build }}.log
         retention-days: 5
