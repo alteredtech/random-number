@@ -1,6 +1,6 @@
 """Script to show random number between 1-5."""
 
-#!/usr/bin/env python3
+#!/usr/bin/env python3 # noqa: E265
 
 import random
 
