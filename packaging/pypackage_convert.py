@@ -2,8 +2,10 @@
 
 #!/usr/bin/env python # noqa: E265
 
+# pylint: disable=import-error
 import json
 import requests
+# pylint: enable=import-error
 
 
 def generate_resource_blocks(requirements_file="requirements.txt"):

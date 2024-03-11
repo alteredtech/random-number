@@ -2,8 +2,10 @@
 
 #!/usr/bin/env python3 # noqa: E265
 
+# pylint: disable=import-error
 import random
 from InquirerPy import inquirer
+# pylint: enable=import-error
 
 
 def main():
