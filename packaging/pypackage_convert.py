@@ -48,8 +48,10 @@ def generate_resource_blocks(requirements_file="requirements.txt"):
             )
 
             if not selected_url:
-                print(f"No .tar.gz distribution \
-                      found for {pkg_name}=={version}")
+                print(
+                    f"No .tar.gz distribution \
+                    found for {pkg_name}=={version}"
+                )
                 continue
 
             download_url = selected_url["url"]
