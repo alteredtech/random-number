@@ -5,6 +5,7 @@
 # pylint: disable=import-error
 import random
 from InquirerPy import inquirer
+
 # pylint: enable=import-error
 
 
