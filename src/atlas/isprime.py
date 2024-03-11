@@ -24,8 +24,8 @@ def is_prime(n):
 def perfect_number(n):
     """Check if number is perfect"""
 
-    sum = (2**n - 1) * (2 ** (n - 1))
-    return sum
+    total = (2**n - 1) * (2 ** (n - 1))
+    return total
 
 
 if __name__ == "__main__":
