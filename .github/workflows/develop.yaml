@@ -1,4 +1,5 @@
 # develop use dev in the naming
+name: Develop Release
 on:
   push:
     branches:

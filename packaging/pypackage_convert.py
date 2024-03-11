@@ -1,6 +1,6 @@
 """Generates resources json on pip requirements."""
 
-#!/usr/bin/env python
+#!/usr/bin/env python # noqa: E265
 
 import json
 import requests
@@ -32,7 +32,7 @@ def generate_resource_blocks(requirements_file="requirements.txt"):
             if response.status_code != 200:
                 print(
                     f"Failed to fetch package \
-                      info for {pkg_name}=={version}"
+                    info for {pkg_name}=={version}"
                 )
                 continue
 
