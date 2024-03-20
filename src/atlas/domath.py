@@ -1,4 +1,4 @@
-"""Get input from user to generate random number"""
+"""Get input from user to perform math"""
 
 #!/usr/bin/env python3 # noqa: E265
 
@@ -7,11 +7,11 @@ from InquirerPy import inquirer
 
 
 def main():
-    """Get input from user to generate random number"""
+    """Get input from user"""
 
     user_answer = inquirer.text(message="Enter a number:").execute()
 
-    print(random.randint(1, int(user_answer)))
+    print(user_answer*user_answer)
 
     multiply(user_answer)
 

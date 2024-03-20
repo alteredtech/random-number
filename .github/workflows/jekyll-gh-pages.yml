@@ -1,5 +1,5 @@
 # Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Deploy Jekyll with GitHub Pages dependencies preinstalled
+name: Deploy Jekyll with GitHub Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -23,12 +23,64 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  pdoc:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout Code
+      - name: Checkout code
+        uses: actions/checkout@v4
+      # Install Python
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.12.2
+      # Ensure pip is installed and upgraded
+      - name: Ensure pip is installed
+        run: |
+          python -m ensurepip --upgrade
+          python -m pip install --upgrade pip
+      # Install pdoc
+      - name: Pip Requirements file
+        run: |
+          sudo apt-get install python3-pip
+          pip install pdoc
+      # Run pdoc
+      - name: Run pdoc
+        run: |
+          pdoc src -o ./scripts-out
+      - name: Move folders to right spot
+        run: |
+          mv ./scripts-out/src/* ./scripts-out
+          rm -rf ./scripts-out/src
+      - name: Remove index.md
+        run: |
+          rm -f ./scripts-out/index.md
+      # Template README.md
+      - name: Template README.md
+        uses: cuchi/jinja2-action@v1.2.2
+        with:
+          template: templates/README.md.j2
+          output_file: ./scripts-out/README.md
+      # Upload script-out artifact
+      - name: Upload script-out artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: script-out
+          path: ./script-out
+          retention-days: 1
   # Build job
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      # Download Brew Resource Artifact
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: script-out
+          path: ./docs/Scripts
+      # Move the artifact to the docs folder
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Build with Jekyll
