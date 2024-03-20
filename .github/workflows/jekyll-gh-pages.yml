@@ -79,6 +79,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: script-out
+          path: ./docs/Scripts
       # Move the artifact to the docs folder
       - name: Setup Pages
         uses: actions/configure-pages@v4
