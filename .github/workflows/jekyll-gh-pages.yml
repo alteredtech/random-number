@@ -52,7 +52,7 @@ jobs:
       - name: Move folders to right spot
         run: |
           mv ./scripts-out/src/* ./scripts-out
-          rm -rf ./scripts-out/src
+          rmdir ./scripts-out/src
       - name: Remove index.md
         run: |
           rm -f ./scripts-out/index.md
@@ -63,8 +63,8 @@ jobs:
       - name: Upload script-out artifact
         uses: actions/upload-artifact@v4
         with:
-          name: script-out
-          path: ./script-out
+          name: scripts-out
+          path: ./scripts-out
           retention-days: 1
   # Build job
   build:
