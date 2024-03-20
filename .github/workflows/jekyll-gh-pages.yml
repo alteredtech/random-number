@@ -56,12 +56,9 @@ jobs:
       - name: Remove index.md
         run: |
           rm -f ./scripts-out/index.md
-      # Template README.md
-      - name: Template README.md
-        uses: cuchi/jinja2-action@v1.2.2
-        with:
-          template: templates/README.md.j2
-          output_file: ./scripts-out/README.md
+      - name: Copy README.md
+        run: |
+          cp templates/README.md ./scripts-out/README.md
       # Upload script-out artifact
       - name: Upload script-out artifact
         uses: actions/upload-artifact@v4
