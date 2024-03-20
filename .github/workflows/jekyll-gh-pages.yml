@@ -43,7 +43,8 @@ jobs:
       - name: Pip Requirements file
         run: |
           sudo apt-get install python3-pip
-          pip install pdoc3
+          pip install pdoc3 pipenv requests
+          pipenv install --system
       # Run pdoc
       - name: Run pdoc
         run: |
