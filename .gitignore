@@ -4,3 +4,4 @@ dist
 test.py
 *.egg-info/
 TODO.md
+**/__pycache__/
