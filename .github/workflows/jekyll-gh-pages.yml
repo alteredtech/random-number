@@ -42,6 +42,7 @@ jobs:
       # Install pdoc
       - name: Pip Requirements file
         run: |
+          ls
           sudo apt-get install python3-pip
           pip install pdoc
       # Run pdoc
