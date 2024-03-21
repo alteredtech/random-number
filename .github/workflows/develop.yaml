@@ -193,7 +193,7 @@ jobs:
     # Install the Formula and output the log to a file
     - name: install formula
       run: |
-        brew update && brew install random-number@9 2>&1
+        brew update && brew install random-number@9
     # Upload install log Artifact
     # - name: Upload log
     #   uses: actions/upload-artifact@v4
