@@ -5,7 +5,7 @@
 # pylint: disable=import-error
 import random
 from InquirerPy import inquirer
-import classes.math as math  # noqa: E402
+from classes import math  # noqa: E402
 # pylint: enable=import-error
 
 
