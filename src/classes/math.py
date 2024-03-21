@@ -3,6 +3,7 @@
 
 class Math:
     """Class for basic Math operations"""
+
     def __init__(self, a, b):
         self.a = a
         self.b = b
