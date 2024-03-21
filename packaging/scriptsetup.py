@@ -1,6 +1,6 @@
 """Generates list of scripts and their parent directory for setup.py."""
 
-#!/usr/bin/env python
+#!/usr/bin/env python # noqa: E265
 
 import os
 
@@ -14,7 +14,10 @@ def get_script_list(start_path):
             if file.endswith(".py") and not file.startswith("__init__"):
                 script_name = os.path.splitext(file)[0]
                 folder_name = os.path.basename(root)
-                script_list.append(f"{script_name}={folder_name}.{script_name}:main")
+                script_list.append(
+                    f"{script_name}=\
+                    {folder_name}.{script_name}:main"
+                )
     return script_list
 
 

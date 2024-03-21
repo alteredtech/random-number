@@ -1,6 +1,6 @@
 """Large number random script."""
 
-#!/usr/bin/env python3
+#!/usr/bin/env python3 # noqa: E265
 
 import random
 

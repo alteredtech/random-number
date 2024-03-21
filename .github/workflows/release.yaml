@@ -1,5 +1,6 @@
 name: Tools Core Release
 # develop use dev in the naming
+name: Release
 on:
   push:
     tags:

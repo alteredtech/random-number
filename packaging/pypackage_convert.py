@@ -1,9 +1,12 @@
 """Generates resources json on pip requirements."""
 
-#!/usr/bin/env python
+#!/usr/bin/env python # noqa: E265
 
+# pylint: disable=import-error
 import json
 import requests
+
+# pylint: enable=import-error
 
 
 def generate_resource_blocks(requirements_file="requirements.txt"):
@@ -48,8 +51,10 @@ def generate_resource_blocks(requirements_file="requirements.txt"):
             )
 
             if not selected_url:
-                print(f"No .tar.gz distribution \
-                      found for {pkg_name}=={version}")
+                print(
+                    f"No .tar.gz distribution \
+                    found for {pkg_name}=={version}"
+                )
                 continue
 
             download_url = selected_url["url"]
