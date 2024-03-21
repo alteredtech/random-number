@@ -11,7 +11,7 @@ install_requires = [(here / 'setup-requirements/requirements.txt').read_text(enc
 setup(
     install_requires = install_requires,
     package_dir={'':'src'},
-    packages=find_packages(where='src',include=['scripts','scripts/classes']),
+    packages=find_packages('src'),
     entry_points={
         'console_scripts': {{env['SCRIPTS']}},
     },
