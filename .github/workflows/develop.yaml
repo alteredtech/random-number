@@ -1,3 +1,4 @@
+name: Tools Core Develop Release
 # develop use dev in the naming
 on:
   push:
