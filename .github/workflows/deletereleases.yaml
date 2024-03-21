@@ -1,5 +1,5 @@
-on: workflow_dispatch
 name: Delete Older Releases
+on: workflow_dispatch
 
 jobs:
   build:
