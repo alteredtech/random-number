@@ -1,9 +1,10 @@
 """Get input from user to generate random number"""
 
-#!/usr/bin/env python3
+#!/usr/bin/env python3 # noqa: E265
 
 import random
 from InquirerPy import inquirer
+
 
 def main():
     """Get input from user to generate random number"""
