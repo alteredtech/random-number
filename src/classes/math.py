@@ -1,3 +1,5 @@
+"""Module for basic Math operations"""
+
 
 class Math:
     """Class for basic Math operations"""
