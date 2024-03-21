@@ -4,10 +4,7 @@
 
 # pylint: disable=import-error
 import random
-import sys
 from InquirerPy import inquirer
-
-sys.path.insert(0, '../../../random-number/src/')
 import classes.math as math  # noqa: E402
 # pylint: enable=import-error
 
