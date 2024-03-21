@@ -5,11 +5,16 @@ on:
   push:
       branches:
           - '*'
+      paths:
+          - 'src/**'
+          - 'packaging/**'
   pull_request:
       branches:
           - 'develop'
           - 'main'
-
+      paths:
+          - 'src/**'
+          - 'packaging/**'
 jobs:
   run-linters:
     name: Run linters
