@@ -4,11 +4,8 @@
 
 # pylint: disable=import-error
 import random
-import sys
 from InquirerPy import inquirer
 
-sys.path.insert(0, '../../../random-number/src/')
-from classes import math  # noqa: E402
 # pylint: enable=import-error
 
 
@@ -16,9 +13,6 @@ def main():
     """Get input from user"""
 
     user_answer = int(inquirer.text(message="Enter a number:").execute())
-    operator = math.Math(user_answer, user_answer)
-
-    print(operator.multiply())
 
     multiply(user_answer)
 

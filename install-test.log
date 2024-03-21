@@ -1,0 +1,309 @@
+==> Fetching dependencies for alteredtech/test-tap/random-number@9: libxml2 and libxslt
+==> Fetching libxml2
+==> Downloading https://ghcr.io/v2/homebrew/core/libxml2/manifests/2.12.6
+==> Downloading https://ghcr.io/v2/homebrew/core/libxml2/blobs/sha256:9c37ec3428a8874a2c06cb6b7c06e6fa245f6c901d11e98cd1fb1a026c19b107
+==> Fetching libxslt
+==> Downloading https://ghcr.io/v2/homebrew/core/libxslt/manifests/1.1.39
+==> Downloading https://ghcr.io/v2/homebrew/core/libxslt/blobs/sha256:28019195eef786264be3a0e67f814753a9108653c5f9e07964b89502c66b06e9
+==> Fetching alteredtech/test-tap/random-number@9
+==> Downloading https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/d46628d315f103ea527907020cf5f6c94365bbb549783f75a794526482afb672--appdirs-1.4.4.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/e3/fc/f800d51204003fa8ae392c4e8278f256206e7a919b708eef054f5f4b650d/attrs-23.2.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/ffb0514ec0054b9da7e9da3b24ae3f1d4e6cc9c02cf9b8d4559f15b323569809--attrs-23.2.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/72/07/6a6f2047a9dc9d012b7b977e4041d37d078b76b44b7ee4daf331c1e6fb35/bcrypt-4.1.2.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/380ade332768becb8fdc1979d51d16b18a479f91d578055a13844dafcb5ed3a6--bcrypt-4.1.2.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/3e/56/2db170a498c9c6545cda16e93c2f2ef9302da44802787b45a8a520d01bdb/biplist-1.0.3.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/a242a587ff390f8f4c2d7c82306aaced7a4b8f494639a10f39a9b28931f41ed5--biplist-1.0.3.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/c4/ca/c129a45394d79ff628fdfe79695ec6e63e75a0add9061190805cff661e08/boto3-1.34.66.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/e235fb8c95f29a70ee7477f51d09571ffb660b777c20f7e30b970e999561ca70--boto3-1.34.66.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/d5/c2/b76a9383c48c726feab9c352df5cf55aea4f34d91d07831582c220fdbe67/botocore-1.34.66.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/9b9e469ed70c196cce631a54e4d8614ded0cb0195a9298d13e36349ec0b18247--botocore-1.34.66.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/71/da/e94e26401b62acd6d91df2b52954aceb7f561743aa5ccc32152886c76c96/certifi-2024.2.2.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/cab95f94f18dbe8114d07b1a1c36d3210920c1ce371e9dda653ac1b31b44554d--certifi-2024.2.2.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/68/ce/95b0bae7968c65473e1298efb042e10cafc7bafc14d9e4f154008241c91d/cffi-1.16.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/0956e0aab1c7dbb92fe41f67522ad609253e27031d4e7870f135e84a22bb1f82--cffi-1.16.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/333faf254dbcd63beac143859da082cb971bf2c230a9c7c4345e9f932aafdc3a--charset-normalizer-3.3.2.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/82/97/930be4777f6b08fc7c248d70c2ea8dfb6a75ab4409f89abc47d6cab37d39/configparser-6.0.1.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/cd52ac4be10589e56fb48940ddf16184d2ec52e993ffc9cd9ffba2ae3c399811--configparser-6.0.1.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/13/9e/a55763a32d340d7b06d045753c186b690e7d88780cafce5f88cb931536be/cryptography-42.0.5.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/73aad0f41302f1f5cd84940253d44048a5ae6183b30f4bede0db529ec9fa9e5b--cryptography-42.0.5.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/7e/86/2bd8fa8b63c91008c4f26fb2c7b4d661abf5a151db474e298e1c572caa57/DateTime-5.4.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/3f1234bdd7798e39eebec86f4dcadd4666c782ec14da5c5b6b1a0d7a3186b116--DateTime-5.4.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/0f/d5/c66da9b79e5bdb124974bfe172b4daf3c984ebd9c2a06e2b8a4dc7331c72/defusedxml-0.7.1.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/17233be0db01086842db956c4801cc91f38000a0e1655901a4f3651d0a92e70d--defusedxml-0.7.1.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/8d/0f/2059c5ef8669e625a533661a2054a82241696954df6662aeee51a34b1022/dropbox-11.36.2.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/6ad1ffe7a5b6843adc3e931ab79bad3914fcefa244067e7e4f84a92e2eddcd0e--dropbox-11.36.2.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/bf/3f/ea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2/idna-3.6.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/b58efb23cfbb95d03a882ab0c89e33bdb5378fbfa9b8bd29db7c8970e340f021--idna-3.6.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/64/dd/7467b3be0e863401438a407411f78c33376748aff39ec0b8f45f6739c86c/importlib_metadata-7.0.2.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/b349d141ffdb1a3578357b1bcb90102de254c4d7f31e9b1701ccd16130ca7be9--importlib_metadata-7.0.2.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/64/73/7570847b9da026e07053da3bbe2ac7ea6cde6bb2cbd3c7a5a950fa0ae40b/InquirerPy-0.3.4.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/b8d9d9fde62e565ebbbb5d6fd2b698bcfcd896785a12f378f6025320acd11117--InquirerPy-0.3.4.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/ef/f7/4a60ac46854eeaab30916ce6df80ff9d2f7a40bb8f9f7e7b7945bf0543f8/Interactive-1.0.1.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/ec0b80f1efd375aab3ee185f0781f643142f92ed2428b30a92c60dbc2ed0f3ff--Interactive-1.0.1.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/db/7a/c0a56c7d56c7fa723988f122fa1f1ccf8c5c4ccc48efad0d214b49e5b1af/isodate-0.6.1.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/1daccc5473eb3979bdc05bf8c97e84c9ac72c154da1312c1c1d9927a6f48e250--isodate-0.6.1.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/a5/8a/ed955184b2ef9c1eef3aa800557051c7354e5f40a9efc9a46e38c3e6d237/jaraco.classes-3.3.1.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/88f8b94a2fe38a8bca0205c84c3bf1b1fa973a7ae660ca949245419eb00d0eaa--jaraco.classes-3.3.1.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/d7/d6/4e31a6f041f29ae314ff2079f3692bd4d3ac360529787aeb5f3b3d9dae5b/jira-3.6.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/fd108c150fc273bd4ec59ca14b82af1ff3c7f789c3f84678c8dd75ac83d2c45a--jira-3.6.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/00/2a/e867e8531cf3e36b41201936b7fa7ba7b5702dbef42922193f05c8976cd6/jmespath-1.0.1.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/6d57c1e74ffaf3a1dad5ec36045cf4130aefbcadf25dda6f83f2a24a5c4f6746--jmespath-1.0.1.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/ae/6c/bd2cfc6c708ce7009bdb48c85bb8cad225f5638095ecc8f49f15e8e1f35e/keyring-24.3.1.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/c6168fa915cb81cab1647531e48598fe4212f3cb07fac060b5509c103ba9152c--keyring-24.3.1.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/2a/ae/bb56c6828e4797ba5a4821eec7c43b8bf40f69cda4d4f5f8c8a2810ec96a/linkify-it-py-2.0.3.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/4a0eacd4da9659bbd4eb02c02ff37bc95b2ca9af493320cef0b5546a9e2c203f--linkify-it-py-2.0.3.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/2b/b4/bbccb250adbee490553b6a52712c46c20ea1ba533a643f1424b27ffc6845/lxml-5.1.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/d7bd4fb60b38bec26ee9a115c477c19ff411c2410dafca055a8fb3357fa611a4--lxml-5.1.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/d4/1b/71434d9fa9be1ac1bc6fb5f54b9d41233be2969f16be759766208f49f072/Mako-1.3.2.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/bc9d1dcf3ed7187b6627604b4a589b14cfce7c2b321b00397f3becbe7db0bd1f--Mako-1.3.2.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/22/02/4785861427848cc11e452cc62bb541006a1087cf04a1de83aedd5530b948/Markdown-3.6.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/c51b06e5389d12024755d81c6670a28ff88f1a5b88ded528d30f7fdc6f4455b4--Markdown-3.6.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/38/71/3b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0/markdown-it-py-3.0.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/ff1cc3497757792d36b0a23806cc97e182ebcffe48bc2cb85c8b56f9581598b8--markdown-it-py-3.0.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/87/5b/aae44c6655f3801e81aa3eef09dbbf012431987ba564d7231722f68df02d/MarkupSafe-2.1.5.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/cc5494ec3b6c92d3d66c69a8c8c98be5db9b8b596dd5aa2d71f4a09be4c23a4c--MarkupSafe-2.1.5.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/b4/db/61960d68d5c39ff0dd48cb799a39ae4e297f6e9b96bf2f8da29d897fba0c/mdit_py_plugins-0.4.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/5969d9e8e0b372e3a518a000c176ecdc85a287bb06eca71a065bc232c842544f--mdit_py_plugins-0.4.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/04a004437f85cadad45d9abe649d90bc481c2779ad0f075dbeb45e1e5aa0be3b--mdurl-0.1.2.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/df/ad/7905a7fd46ffb61d976133a4f47799388209e73cbc8c1253593335da88b4/more-itertools-10.2.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/3b7869bb34a28ef584bab614b3958c4638e22c60176368d4a2c74b5e465cb06b--more-itertools-10.2.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/65/6e/09db70a523a96d25e115e71cc56a6f9031e7b8cd166c1ac8438307c14058/numpy-1.26.4.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/74d8f89b67cfbe9d38834cd89c739f63e466c302531ca2d8e6e1bfff270dc7a1--numpy-1.26.4.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/6d/fa/fbf4001037904031639e6bfbfc02badfc7e12f137a8afa254df6c4c8a670/oauthlib-3.2.2.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/c43362a5ec6eb4a1256c27769dc00308f3c65cc19acd95f10e567c712520dc17--oauthlib-3.2.2.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/ee/b5/b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4d/packaging-24.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/4500f418312d30e798642bced6da5165bf8d975b90f31bd626b7e189656f3acc--packaging-24.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/3d/59/2afa81b9fb300c90531803c0fd43ff4548074fa3e8d0f747ef63b3b5e77a/pandas-2.2.1.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/b1346e3c1a1534c7fc85f49835cef9fd7f92e76c42c49dd9cdc520a75d747298--pandas-2.2.1.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/cc/af/11996c4df4f9caff87997ad2d3fd8825078c277d6a928446d2b6cf249889/paramiko-3.4.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/326910510eb03b748c250e54919821d727703b98bde06fd1d3f3b5f19d24a084--paramiko-3.4.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/12/66/4a644dbb574b1cf3f553d3b542f626e5e23012585654a678ff9034033b55/pdfgen-1.0.5.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/81a2e6179b9e3745e23b24afe99239fbad8ed0284b842dc27082cd380a05191b--pdfgen-1.0.5.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/95/be/69267c988fb7236cd60c452a4e7fb9a7991729476db490b634a07e7dfcdf/pdoc3-0.10.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/1166960258a5897a29f55aa088e3a775dccbf68b66c740ba34a3f8bfefefe8fd--pdoc3-0.10.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/b8/fe/27c7438c6ac8b8f8bef3c6e571855602ee784b85d072efddfff0ceb1cd77/pendulum-3.0.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/f41b900ca118b41253d60b902679eb37aef59732cf72440ee07518e8216fe12d--pendulum-3.0.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/d9/5a/32b50c077c86bfccc7bed4881c5a2b823518f5450a30e639db5d3711952e/pfzy-0.3.4.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/b7040140703b38180eed421f11514253d4ccf124b9ca7f989bbc70731b8c7e9b--pfzy-0.3.4.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/f8/3e/32cbd0129a28686621434cbf17bb64bf1458bfb838f1f668262fefce145c/pillow-10.2.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/12be09556458e0a30c47c784166b84342a85d4f2b15cf68e31b08c8e5688bc39--pillow-10.2.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/96/dc/c1d911bf5bb0fdc58cc05010e9f3efe3b67970cef779ba7fbc3183b987a8/platformdirs-4.2.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/af4311de1494d36f786040d911c81823b95916fe0ec5279cea1bd03c762072db--platformdirs-4.2.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/e5/69/882ee5c9d017149285cab114ebeab373308ef0f874fcdac9beb90e0ac4da/ply-3.11.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/b4ba89b7bbe85fb09f25fe369816ac47758bda9063ea6c4d3b2feae0a2e61398--ply-3.11.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/19/d3/7cb826e085a254888d8afb4ae3f8d43859b13149ac8450b221120d4964c9/prettytable-3.10.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/14350130a5724ad7c68d29a4ac9877a1f543a12d3514b57dc1e16fdc5a2cd73d--prettytable-3.10.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/35/77/0cfa1b4697cfb5336f3a96e8bc73327f64610be3a64c97275f1801afb395/primePy-1.3.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/81cca6468e5a63cf52e64536d64aa46a6951779482def0eeb260cd18d48224b7--primePy-1.3.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/cc/c6/25b6a3d5cd295304de1e32c9edbcf319a52e965b339629d37d42bb7126ca/prompt_toolkit-3.0.43.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/b0a52c100225ac0e7c412225aa31e571606b675bf00b241577d61482a2e9450e--prompt_toolkit-3.0.43.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/pycparser-2.21.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/afd26a33c942c1a86b5bd298b2b7eeb80b73d361c2fd472977b130ed873f655b--pycparser-2.21.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/e6/88/a917aaa0da1915292022745184275e095516b490a85d89fc48fd4de1c01a/pyee-8.2.2.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/6b0755ae432c874920510aa613a255ee277df038c6a6fa6b5cf5d3656b341faa--pyee-8.2.2.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/55/59/8bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565/pygments-2.17.2.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/41e97c4ac7303109eb0524487c77544fc413ca8483123b2671e941f9dbc52dff--pygments-2.17.2.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/30/72/8259b2bccfe4673330cea843ab23f86858a419d8f1493f66d413a76c7e3b/PyJWT-2.8.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/1e703c69c842b0a49e275d139b9a2a2a3f5278804542bcfab680ed9f825ec8b0--PyJWT-2.8.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/41/9d/ee68dee1c8821c839bb31e6e5f40e61035a5278f7c1307dde758f0c90452/PyMySQL-1.1.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/93f1ec37822f0e8c8a8a9c9bace7e4a1055fca183031f98d4448aff145d39baf--PyMySQL-1.1.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/a7/22/27582568be639dfe22ddb3902225f91f2f17ceff88ce80e4db396c8986da/PyNaCl-1.5.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/92052797d509c2ffc5990e56a4f9b7588c7d51cb1f2590f818b8fa2d174e963d--PyNaCl-1.5.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/0b/79/abdc2edda52463490c860232149242b693cbf6179d9863b0c7862cf9fd73/PyPDF2-1.28.6.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/e3fa394aa8fdccce539718e1a7ca7db3cec8945077938da591fbb74723592a87--PyPDF2-1.28.6.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/d9/bd/aee9896b82f5c74612586743a006fbdc02515277ffb62409b57e68934f6a/pyppeteer-0.2.6.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/073c9b7c59235d11b9ea60c179889a2f07d2b9b82b1020987499b5582c712813--pyppeteer-0.2.6.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/ad1d53477437be982f2453fd315b094baa5d8d8a3c96cd13e2205dee5e51d1a5--python-dateutil-2.9.0.post0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/90/26/9f1f00a5d021fff16dee3de13d43e5e978f3d58928e129c3a62cf7eb9738/pytz-2024.1.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/e9227a0c06b8d6f945be6d88ddba24ae7742800b6a46aa1b90065cbc1fa1cce2--pytz-2024.1.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/72bc99cc85fb475c8a06e79cabbbf73455bdd66813fbf3abb08aa84808577bcc--requests-2.31.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/e8/14/27d8eed7ef7870525ed9888eaa273d6c564562367a1678a85496d6b4ccf2/requests_aws_sign-0.1.6.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/61d0d907ba2d15d73e5b59161aa7f21307c2286020c087430573a8e7b74aed5f--requests_aws_sign-0.1.6.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/2b/69/ba1b5f52f96cde4f2d8eca74a0aa2c11a66b2fe58d0fb63b2e46edce6ed3/requests-file-2.0.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/e9e8ea73bdc006a65420c2274c062bd65f1737aae41fb05b2c3ea9f9a19a3e22--requests-file-2.0.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/d5/5d/fd68baf0876774835068b557717932c44c6be42ee847bcc210bf389d4189/requests-oauthlib-1.4.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/5c11139d6a29cf1d0cf38d9ffa96ab7d7edb4f3d2cefb6a4f5731ffaec60ea27--requests-oauthlib-1.4.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/f3/61/d7545dafb7ac2230c70d38d31cbfe4cc64f7144dc41f6e4e4b78ecd9f5bb/requests-toolbelt-1.0.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/6fd0a5eaeddd206015d77900c2712f727499f9ae743eee9e8c890fcd2712dffe--requests-toolbelt-1.0.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/b3/01/c954e134dc440ab5f96952fe52b4fdc64225530320a910473c1fe270d9aa/rich-13.7.1.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/ba00bd2e3124102fbbba7bea263118c77209d325b6c2943e40791da6f5e7c127--rich-13.7.1.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/83/bc/fb0c1f76517e3380eb142af8a9d6b969c150cfca1324cea7d965d8c66571/s3transfer-0.10.1.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/0f47935fe40f71df6243c9d17e8dcee263ba97b6a70736d52bfd9f7ca6503fd7--s3transfer-0.10.1.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/4d/5b/dc575711b6b8f2f866131a40d053e30e962e633b332acf7cd2c24843d83d/setuptools-69.2.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/02351e9c193fdf3925f6ee35b6ad77365722df2c3632bc6b9d71599683aeb213--setuptools-69.2.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/8c/c3/f979fed15f11285b1cd6d22929d7259ad15eef5334e5594fab443135ba5b/simple-salesforce-1.12.5.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/42d5a3b455ff6e73b209910e3d846430a41ce20a4fa47d3b4e3fcb814bd323b7--simple-salesforce-1.12.5.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/a1/a0/7e78b93510886f6fb5b7146bd5cee03986fa5c2319644155c275e389c55a/simple-term-menu-1.6.4.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/e26b50d8b3801b0fb0885beb458e8229b8006e308ea53acfd5d1e3381c49e68d--simple-term-menu-1.6.4.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/3090f0022e8388f5c3bbff25d19f54b7af62562659cbf599e5f7fb044f280199--six-1.16.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/f8/77/e567bfc892a352ea2c6bc7e29830bed763b4a14681e7fefaf82974a9f775/slack_sdk-3.27.1.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/a0fb24920807f0ea70392f96e4a0d288aa605121378f75ccc8e7a53f51cad17c--slack_sdk-3.27.1.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/65/16/10f170ec641ed852611b6c9441b23d10b5702ab5288371feab3d36de2574/sqlparse-0.4.4.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/43b7e05f2411334bd944dbb39b7454bbb90c0349ce4b5f130b811508b0c6c38a--sqlparse-0.4.4.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/61/4f/b5a9138e86b13e00e2439c62fb4d045d595e0e260454977741f62448c624/stone-3.2.1.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/ad01e5436df1da546fcf16f06c07143147976d9780ff97ff1b10616940c63d50--stone-3.2.1.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/c6/76/b65cc583347fd16a9a01f967a325d119a0a73b7a3487364d80b7dc8c9be2/syncasync-20180812.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/e558adcdc4a58712c9090a19b511a44f41863113b4a3d31b350ece86879a0239--syncasync-20180812.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/ec/fe/802052aecb21e3797b8f7902564ab6ea0d60ff8ca23952079064155d1ae1/tabulate-0.9.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/a402eec1bf74b3a30527551638dfe8b8828183c9af4d4cd3d7fd96af76ebe499--tabulate-0.9.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/10/56/d7d66a84f96d804155f6ff2873d065368b25a07222a6fd51c4f24ef6d764/termcolor-2.4.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/52c2f8b40ffb1ce31b5e79a7c267e412c0c24e183d1b24310bf24ccd402c471c--termcolor-2.4.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/59/f4/3df30a59ae3fe915c4311a93646fc184be19999e6e5d828831d4cfe53851/textual-0.53.1.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/2476bb34cadfcc2877a12703fbff14a5a536b4e21fb156e23d5000f6482ab249--textual-0.53.1.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/83/f6/6f87e0373f0ed8c272cee29d27f62d86133b770e6d06a2b0f13b3489411d/time-machine-2.14.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/b25d88505d6856e3763a4f48b09fb76fb8bc7e6965b8f72bf03bbabec9e6e912--time-machine-2.14.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/ea/85/3ce0f9f7d3f596e7ea57f4e5ce8c18cb44e4a9daa58ddb46ee0d13d6bff8/tqdm-4.66.2.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/90cf195a20f3d7710a004e4745a9f960f6738da12ff92e1bdcad0aa40573000c--tqdm-4.66.2.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/05/d9/6eebe19d46bd05360c9a9aae822e67a80f9242aabbfc58b641b957546607/typing-3.7.4.3.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/ca52dfcaa57baec03c919bfb5afa8f9865a6ce4b4b7cd1990648f7fa54090ce9--typing-3.7.4.3.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/16/3a/0d26ce356c7465a19c9ea8814b960f8a36c3b0d07c323176620b7b483e44/typing_extensions-4.10.0.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/66d6060d4323ad04becb823884938997889fe6978c6ee74ea5a721ffd38bb17c--typing_extensions-4.10.0.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/74/5b/e025d02cb3b66b7b76093404392d4b44343c69101cc85f4d180dd5784717/tzdata-2024.1.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/b30dda40e257f8cdc3ab0656baec11a96b18a3d5d9e6335f9d8699e8e309fa53--tzdata-2024.1.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/91/7a/146a99696aee0609e3712f2b44c6274566bc368dfe8375191278045186b8/uc-micro-py-1.0.3.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/75552f4803c23aee9fe07b8b088cd8f4751c1ecda6b205090f0f358d97865980--uc-micro-py-1.0.3.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/0c/39/64487bf07df2ed854cc06078c27c0d0abc59bd27b32232876e403c333a08/urllib3-1.26.18.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/e99e989d11c87d13b2d9010dcd4f1a44d73e384c014d444045490685a74b522a--urllib3-1.26.18.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/6c/63/53559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598/wcwidth-0.2.13.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/51c0f701a9824f8c403d869d12f1cb064658bb425309a803fd9251fff747d3d4--wcwidth-0.2.13.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/0d/bd/5262054455ab2067e51de331bfbc53a1dfa9071af7c424cf7c0793c4349a/websockets-9.1.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/075ee2ab53776437c416853a0c428a971a0b9f301c41b8fd34d3bc87af02df1d--websockets-9.1.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/0e/6e/faf922412b0538663bba81cf1e741fa9856aac7b4fd80d0790521b4bbe7d/yaspin-3.0.1.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/6df2d129fa45eaf904b4c982cd9cd346e782162dd9e80bafdf4f8b231c6c1e43--yaspin-3.0.1.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/fd/a4/8fa2337f1807fd9e671b85980b2c90052d524edf9d39b515aed4c5874c38/zeep-4.2.1.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/d9928cc3897e6223e6bb6afaf73eb5bdb2a9e2b1eab54c49d3e1ef505c946121--zeep-4.2.1.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/3e/ef/65da662da6f9991e87f058bc90b91a935ae655a16ae5514660d6460d1298/zipp-3.18.1.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/fc24170d6bc55b8b06bec96926aeaeebfdfec7ada843590fd2e12c58036f675e--zipp-3.18.1.tar.gz
+==> Downloading https://files.pythonhosted.org/packages/cd/37/1b003190ba7148226a8212d98ff8074e212fef30c82e616bdb818ae1f838/zope.interface-6.2.tar.gz
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/178544cc83460f0ddbd87dd407ec0b0a130a1133c31549ed5900c9af1b864979--zope.interface-6.2.tar.gz
+==> Downloading https://github.com/alteredtech/random-number/releases/download/2024.03.21dev48/tools-core-2024.03.21dev48.tar.gz
+==> Downloading from https://objects.githubusercontent.com/github-production-release-asset-2e65be/767300624/34c951e4-4797-4e45-87e7-d7e69b926344?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240321%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240321T165024Z&X-Amz-Expires=300&X-Amz-Signature=08e11651d990a421704d9d90e58b1a7cdba59ac2700c81aee37e642724e29d12&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=767300624&response-content-disposition=attachment%3B%20filename%3Dtools-core-2024.03.21dev48.tar.gz&response-content-type=application%2Foctet-stream
+==> Installing random-number@9 from alteredtech/test-tap
+==> Installing dependencies for alteredtech/test-tap/random-number@9: libxml2 and libxslt
+==> Installing alteredtech/test-tap/random-number@9 dependency: libxml2
+==> Downloading https://ghcr.io/v2/homebrew/core/libxml2/manifests/2.12.6
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/dba28e96e8812d484a1d290c5d0960d90d50ef8662036eaf29775bedab2adb15--libxml2-2.12.6.bottle_manifest.json
+==> Pouring libxml2--2.12.6.arm64_sonoma.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libxml2/2.12.6: 200 files, 6.4MB
+==> Installing alteredtech/test-tap/random-number@9 dependency: libxslt
+==> Downloading https://ghcr.io/v2/homebrew/core/libxslt/manifests/1.1.39
+Already downloaded: /Users/alteredtech/Library/Caches/Homebrew/downloads/6ad757f877bb8bc19fdf17c23b97dc9390d2985c2a6b1404a4aa049374a0c4c2--libxslt-1.1.39.bottle_manifest.json
+==> Pouring libxslt--1.1.39.arm64_sonoma.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libxslt/1.1.39: 100 files, 1.3MB
+==> Installing alteredtech/test-tap/random-number@9
+[34m==>[0m [1mpython3.12 -m venv --system-site-packages --without-pip /opt/homebrew/Cellar[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+[34m==>[0m [1mpython3.12 -m pip --python=/opt/homebrew/Cellar/random-number@9/2024.03.21de[0m
+Last 15 lines from /Users/alteredtech/Library/Logs/Homebrew/random-number@9/90.python3.12:
+    generated_console_scripts = maker.make_multiple(scripts_to_generate)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.12/site-packages/pip/_vendor/distlib/scripts.py", line 451, in make_multiple
+    filenames.extend(self.make(specification, options))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.12/site-packages/pip/_internal/operations/install/wheel.py", line 423, in make
+    return super().make(specification, options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.12/site-packages/pip/_vendor/distlib/scripts.py", line 438, in make
+    self._copy_script(specification, filenames)
+  File "/opt/homebrew/lib/python3.12/site-packages/pip/_vendor/distlib/scripts.py", line 343, in _copy_script
+    script = os.path.join(self.source_dir, convert_path(script))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen posixpath>", line 76, in join
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+If reporting this issue please do so at (not Homebrew/brew or Homebrew/homebrew-core):
+  https://github.com/alteredtech/homebrew-test-tap/issues
+
