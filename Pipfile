@@ -35,6 +35,8 @@ urllib3 = "*"
 pandas = "*"
 stone = "==3.2.1"
 primepy = "*"
+pdfgen = "*"
+pdoc3 = "*"
 
 [dev-packages]
 
