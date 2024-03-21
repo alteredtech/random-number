@@ -10,5 +10,6 @@ jobs:
         with:
           keep_latest: 3
           delete_tags: true
+          delete_prerelease_only: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
