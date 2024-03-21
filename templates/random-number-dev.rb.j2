@@ -20,6 +20,8 @@ class RandomNumberAT9 < Formula
     depends_on "python-cryptography"
     depends_on "mozjpeg"
     depends_on "cmake" => :build
+    depends_on "libxml2" => :build
+    depends_on "libxslt" => :build
 
     {% for package in resources %}
     resource "{{ package.name }}" do

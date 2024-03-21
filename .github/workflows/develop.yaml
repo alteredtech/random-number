@@ -193,13 +193,21 @@ jobs:
     # Install the Formula and output the log to a file
     - name: install formula
       run: |
-        brew update && brew install random-number@9 2>&1 | tee install-${{ steps.dev-version.outputs.dev-build }}.log
+        brew update && brew install random-number@9
     # Upload install log Artifact
-    - name: Upload log
+    # - name: Upload log
+    #   uses: actions/upload-artifact@v4
+    #   with:
+    #     name: brew-install-log
+    #     path: install-${{ needs.build.outputs.dev-build }}.log
+    #     retention-days: 5
+    # Upload homebrew log
+    - name: Upload homebrew log
       uses: actions/upload-artifact@v4
+      if: always()
       with:
-        name: brew-install-log
-        path: install-${{ steps.dev-version.outputs.dev-build }}.log
+        name: homebrew-log
+        path: /home/runner/.cache/Homebrew/Logs/random-number@9
         retention-days: 5
   
   # Remove the release
@@ -212,6 +220,6 @@ jobs:
       - uses: ClementTsang/delete-tag-and-release@v0.3.1
         with:
           delete_release: true # default: false
-          tag_name: ${{ steps.dev-version.outputs.dev-build }}
+          tag_name: ${{ needs.build.outputs.dev-build }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
