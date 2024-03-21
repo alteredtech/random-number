@@ -48,6 +48,7 @@ jobs:
       # Run pdoc
       - name: Run pdoc
         run: |
+          export PYTHONPATH=$PYTHONPATH:./src
           pdoc src -o ./scripts-out
       - name: Move folders to right spot
         run: |
