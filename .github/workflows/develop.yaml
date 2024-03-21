@@ -204,6 +204,7 @@ jobs:
     # Upload homebrew log
     - name: Upload homebrew log
       uses: actions/upload-artifact@v4
+      if: always()
       with:
         name: homebrew-log
         path: /home/runner/.cache/Homebrew/Logs/random-number@9

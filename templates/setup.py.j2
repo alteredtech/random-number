@@ -6,12 +6,12 @@ from setuptools import find_packages, setup
 
 here = pathlib.Path(__file__).parent.resolve()
 
-install_requires = (here / 'setup-requirements/requirements.txt').read_text(encoding='utf-8').splitlines()
+install_requires = [(here / 'setup-requirements/requirements.txt').read_text(encoding='utf-8').splitlines(),]
 
 setup(
     install_requires = install_requires,
     package_dir={'':'src'},
-    packages=find_packages('src'),
+    packages=find_packages(where='src'include=['scripts','classes']),
     entry_points={
         'console_scripts': {{env['SCRIPTS']}},
     },
