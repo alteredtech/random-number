@@ -43,10 +43,10 @@ def generate_resource_blocks(requirements_file="requirements.txt"):
             # Select the tar.gz distribution URL
             selected_url = next(
                 (
-                    url_info 
+                    url_info
                     for url_info in pkg_info["urls"]
                     if url_info["url"].endswith(".tar.gz")
-                ), 
+                ),
                 None,
             )
 

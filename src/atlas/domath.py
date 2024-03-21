@@ -4,8 +4,8 @@
 
 # pylint: disable=import-error
 import random
-import classes.math as maths
 from InquirerPy import inquirer
+import classes.math as maths
 
 # pylint: enable=import-error
 
