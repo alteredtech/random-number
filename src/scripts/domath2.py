@@ -5,7 +5,7 @@
 # pylint: disable=import-error
 import random
 from InquirerPy import inquirer
-from class_math import Math as maths  # noqa: E402
+from scripts.class_math import Math as maths  # noqa: E402
 # pylint: enable=import-error
 
 
@@ -13,7 +13,7 @@ def main():
     """Get input from user"""
 
     user_answer = int(inquirer.text(message="Enter a number:").execute())
-    operator = maths.Math(user_answer, user_answer)
+    operator = maths(user_answer, user_answer)
 
     print(operator.multiply())
 
