@@ -185,11 +185,11 @@ jobs:
     # Install Homebrew on Linux
     - name: Set up Homebrew
       run: |
-      sudo apt-get install build-essential curl git
-      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-      (echo; echo 'eval "$(/home/$USER/.linuxbrew/bin/brew shellenv)"') >> /home/$USER/.bashrc
-      eval "$(/home/$USER/.linuxbrew/bin/brew shellenv)"
-      brew --version
+        sudo apt-get install build-essential curl git
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        (echo; echo 'eval "$(/home/$USER/.linuxbrew/bin/brew shellenv)"') >> /home/$USER/.bashrc
+        eval "$(/home/$USER/.linuxbrew/bin/brew shellenv)"
+        brew --version
     # Tap the Homebrew Formula
     - name: tap brew
       run: |
