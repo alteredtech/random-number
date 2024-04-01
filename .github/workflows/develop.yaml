@@ -184,8 +184,12 @@ jobs:
     steps:
     # Install Homebrew on Linux
     - name: Set up Homebrew
-      id: set-up-homebrew
-      uses: Homebrew/actions/setup-homebrew@master
+      run: |
+      sudo apt-get install build-essential curl git
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      (echo; echo 'eval "$(/home/$USER/.linuxbrew/bin/brew shellenv)"') >> /home/$USER/.bashrc
+      eval "$(/home/$USER/.linuxbrew/bin/brew shellenv)"
+      brew --version
     # Tap the Homebrew Formula
     - name: tap brew
       run: |
@@ -194,13 +198,6 @@ jobs:
     - name: install formula
       run: |
         brew update && brew install random-number@9
-    # Upload install log Artifact
-    # - name: Upload log
-    #   uses: actions/upload-artifact@v4
-    #   with:
-    #     name: brew-install-log
-    #     path: install-${{ needs.build.outputs.dev-build }}.log
-    #     retention-days: 5
     # Upload homebrew log
     - name: Upload homebrew log
       uses: actions/upload-artifact@v4
