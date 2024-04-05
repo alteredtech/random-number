@@ -9,3 +9,10 @@ jobs:
       run: |
         brew tap alteredtech/test-tap
         brew install random-number
+    - name: Upload homebrew log
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: homebrew-log
+        path: /User/runner/Library/Logs/Homebrew/random-number
+        retention-days: 5
