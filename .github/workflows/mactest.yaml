@@ -15,5 +15,5 @@ jobs:
       if: always()
       with:
         name: homebrew-log
-        path: /User/runner/Library/Logs/Homebrew/random-number
+        path: /Users/runner/Library/Logs/Homebrew/random-number
         retention-days: 5
