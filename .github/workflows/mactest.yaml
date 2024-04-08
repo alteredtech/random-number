@@ -7,6 +7,10 @@ jobs:
     steps:
     - name: Install dependencies
       run: |
+        brew update
+        brew install openjpeg
+    - name: Install tap and formula
+      run: |
         brew tap alteredtech/test-tap
         brew install random-number
 
