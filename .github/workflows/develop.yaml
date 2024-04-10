@@ -184,11 +184,11 @@ jobs:
     steps:
     - name: install dependencies
       run: |
-        sudo apt-get install -y libfreetype6-dev
+        sudo apt-get install -y libfreetype6-dev libjpeg-dev zlib1g-dev 
     # Install Homebrew on Linux
     - name: Set up Homebrew
       run: |
-        sudo apt-get install build-essential curl git
+        sudo apt-get install build-essential procps curl file git
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/runner/.bashrc
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -209,6 +209,7 @@ jobs:
       run: |
         (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/runner/.bashrc
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+        brew install gcc
         brew update && brew install random-number@9
     - name: brew list formula
       if: always()
