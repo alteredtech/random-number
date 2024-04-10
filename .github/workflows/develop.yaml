@@ -196,15 +196,23 @@ jobs:
         (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/runner/.bashrc
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
         brew tap alteredtech/test-tap
-    - name: install dependencies
+    - name: brew list formula
       run: |
-        sudo apt install -y libopenjp2-7 libopenjp2-tools libtiff-dev
+        (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/runner/.bashrc
+        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+        brew list
     # Install the Formula and output the log to a file
     - name: install formula
       run: |
         (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/runner/.bashrc
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
         brew update && brew install random-number@9
+    - name: brew list formula
+      if: always()
+      run: |
+        (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/runner/.bashrc
+        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+        brew list
     # Upload homebrew log
     - name: Upload homebrew log
       uses: actions/upload-artifact@v4
