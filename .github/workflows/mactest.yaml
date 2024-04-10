@@ -7,6 +7,9 @@ jobs:
     steps:
     - name: update brew
       run: brew update
+    - name: remove unused formula
+      run: brew autoremove
+
     - name: List all installed formulae
       run: brew list
     
