@@ -8,6 +8,7 @@ jobs:
     - name: Install dependencies
       run: |
         brew update
+        brew list
         brew install openjpeg freetype
     - name: Install tap and formula
       run: |
