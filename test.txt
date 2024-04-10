@@ -1,0 +1,109 @@
+
+Skip to content
+
+    alteredtech
+    /
+    random-number
+
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+
+    Settings
+
+Mac Homebrew Install
+Mac Homebrew Install #9
+
+Jobs
+
+Run details
+
+build
+Started 2024-04-10 10:12:54 ago
+Beta
+Give feedback
+2s
+23s
+mongodb-community@5.0
+mongodb-database-tools
+mongosh
+mpdecimal
+mpfr
+mpg123
+ncurses
+nettle
+nginx
+node
+node@18
+npth
+oniguruma
+openblas
+openexr
+openjdk
+openjpeg
+openldap
+openssl@1.1
+openssl@3
+opus
+opusfile
+p11-kit
+p7zip
+packer
+pcre2
+perl
+php
+pinentry
+pipx
+pixman
+pkg-config
+postgresql@14
+pycparser
+python@3.11
+python@3.12
+qemu
+r
+readline
+rtmpdump
+ruby@3.0
+rustup-init
+sbt
+selenium-server
+shared-mime-info
+snappy
+sox
+sqlite
+subversion
+swiftformat
+swiftlint
+swig
+switchaudio-osx
+tcl-tk
+tidy-html5
+unbound
+unixodbc
+unxip
+utf8proc
+vde
+webp
+wget
+x265
+xcbeautify
+xcodes
+xorgproto
+xz
+yq
+zlib
+zstd
+firefox
+google-chrome
+julia
+microsoft-edge
+session-manager-plugin
+vagrant
+virtualbox
+
