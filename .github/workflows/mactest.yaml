@@ -5,15 +5,23 @@ jobs:
   build:
     runs-on: macos-latest
     steps:
+    - name: update brew
+      run: brew update
+    - name: List all installed formulae
+      run: brew list
+    
     - name: Install dependencies
-      run: |
-        brew update
-        brew list
-        brew install openjpeg freetype
+      run: brew install mozjpeg 
+    
     - name: Install tap and formula
       run: |
         brew tap alteredtech/test-tap
         brew install random-number
+
+    - name: Installed brew formulae
+      if: always()
+      run: |
+        brew list
 
     - name: Upload homebrew log
       uses: actions/upload-artifact@v4
