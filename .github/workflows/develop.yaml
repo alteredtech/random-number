@@ -195,7 +195,7 @@ jobs:
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
         brew --version
         brew tap brewsci/homebrew-bio
-        brew install matplotlib
+        brew install matplotlib --build-from-source
     # Tap the Homebrew Formula
     - name: tap brew
       run: |
