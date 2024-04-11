@@ -193,10 +193,13 @@ jobs:
     - name: Set up Homebrew
       run: |
         sudo apt-get update && sudo apt-get upgrade -y
+        sudo apt-get install python3-dev python3-setuptools
         sudo apt-get install build-essential procps curl file git libtiff5-dev libjpeg8-dev libopenjp2-7-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python3-tk libharfbuzz-dev libfribidi-dev libxcb1-dev
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/runner/.bashrc
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+        python3 -m pip install --upgrade pip
+        python3 -m pip install --upgrade Pillow --no-binary :all:
         brew --version
     # Tap the Homebrew Formula
     - name: tap brew
