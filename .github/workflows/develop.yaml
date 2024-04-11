@@ -1,8 +1,11 @@
 name: Tools Core Develop Release
 on:
-  push:
+  pull_request:
     branches:
       - develop
+    types:
+      - opened
+      - synchronize
 
 jobs:
 
@@ -181,10 +184,7 @@ jobs:
     needs: update-homebrew
     name: Test Develop Brew formula
     runs-on: ubuntu-latest
-    steps:
-    - name: install dependencies
-      run: |
-        sudo apt-get install -y libfreetype6-dev libjpeg-dev zlib1g-dev 
+    steps: 
     # Install Homebrew on Linux
     - name: Set up Homebrew
       run: |
@@ -193,6 +193,8 @@ jobs:
         (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/runner/.bashrc
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
         brew --version
+        brew tap brewsci/homebrew-bio
+        brew install matplotlib --build-from-source
     # Tap the Homebrew Formula
     - name: tap brew
       run: |
