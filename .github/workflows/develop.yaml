@@ -1,8 +1,11 @@
 name: Tools Core Develop Release
 on:
-  push:
+  pull_request:
     branches:
       - develop
+    types:
+      - opened
+      - synchronize
 
 jobs:
 
@@ -181,19 +184,18 @@ jobs:
     needs: update-homebrew
     name: Test Develop Brew formula
     runs-on: ubuntu-latest
-    steps:
-    - name: install dependencies
-      run: |
-        sudo apt-get install -y libfreetype6-dev libjpeg-dev zlib1g-dev 
+    steps: 
     # Install Homebrew on Linux
     - name: Set up Homebrew
       run: |
         sudo apt-get update && sudo apt-get upgrade -y
-        sudo apt-get install build-essential procps curl file git zlib1g-dev libfreetype6 libfreetype6-dev librust-freetype-dev python3-freetype libjpeg8 liblcms2-2 liblcms2-dev liblcms2-utils libwebp-dev libwebp7 openjpeg-doc libimagequant-dev libraqm-dev libxcb1 python3-dev python3-setuptools
+        sudo apt-get install build-essential procps curl file git libtiff5-dev libjpeg8-dev libopenjp2-7-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python3-tk libharfbuzz-dev libfribidi-dev libxcb1-dev
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/runner/.bashrc
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
         brew --version
+        brew tap brewsci/homebrew-bio
+        brew install matplotlib --build-from-source
     # Tap the Homebrew Formula
     - name: tap brew
       run: |
@@ -210,7 +212,6 @@ jobs:
       run: |
         (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/runner/.bashrc
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-        brew install gcc
         brew update && brew install random-number@9
     - name: brew list formula
       if: always()
