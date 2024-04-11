@@ -22,6 +22,10 @@ class RandomNumberAT9 < Formula
     depends_on "cmake" => :build
     depends_on "libxml2" => :build
     depends_on "libxslt" => :build
+    depends_on "webp"         # Pillow
+    depends_on "libjpeg"      # Pillow
+    depends_on "libtiff"      # Pillow
+    depends_on "little-cms2"  # Pillow
 
     {% for package in resources %}
     resource "{{ package.name }}" do

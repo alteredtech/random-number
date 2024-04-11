@@ -201,6 +201,7 @@ jobs:
         python3 -m pip install --upgrade pip
         python3 -m pip install --upgrade Pillow --no-binary :all:
         brew --version
+        brew install openjpeg
     # Tap the Homebrew Formula
     - name: tap brew
       run: |
