@@ -193,8 +193,6 @@ jobs:
         (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/runner/.bashrc
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
         brew --version
-        brew tap brewsci/homebrew-bio
-        brew install matplotlib --build-from-source
     # Tap the Homebrew Formula
     - name: tap brew
       run: |
