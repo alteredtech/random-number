@@ -17,12 +17,13 @@ class RandomNumberAT9 < Formula
     depends_on "pkg-config" => :build
     depends_on "rust" => :build
     depends_on "certifi"
-    depends_on "python-cryptography"
-    depends_on "mozjpeg"
+    depends_on "cryptography"
+    depends_on "mozjpeg" => :build
     depends_on "cmake" => :build
     depends_on "libxml2" => :build
     depends_on "libxslt" => :build
     depends_on "freetype" => :build
+    depends_on "openjpeg" => :build
 
     {% for package in resources %}
     resource "{{ package.name }}" do
