@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 jira = "*"
-pillow = "==8.1.0"
+pillow = "*"
 
 [dev-packages]
 
