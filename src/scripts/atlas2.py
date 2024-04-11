@@ -16,10 +16,19 @@ def main():
 
     print(random.randint(1, int(user_answer)))
 
-    multiply(user_answer)
+    result = multiply(user_answer)
+    print(result)
 
 
-def multiply(input_number):
-    """Get input to generate random number"""
+def multiply(input_number: int) -> int:
+    """
+    Get input to generate random number
 
-    print(random.randint(1, int(input_number)) * random.randint(1, 100))
+    Args:
+        input_number (int): User input
+    
+    Returns:
+        int: Random number
+    """
+
+    return random.randint(1, int(input_number)) * random.randint(1, 100)
