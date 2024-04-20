@@ -12,3 +12,8 @@ jobs:
           echo $(brew --repo)
           cd $(brew --repo)
           ls
+          cd Library
+          ls
+          cd Taps
+          ls
+          
