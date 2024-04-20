@@ -6,7 +6,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: tap
-        run: brew tap alteredtech/test-tap
+        run: brew tap alteredtech/test-tap -v
       - name: show brew things
         run: |
           echo $(brew --repo)
