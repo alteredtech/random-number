@@ -32,3 +32,10 @@ jobs:
         with:
           name: brew-${{matrix.os}}
           path: /opt/homebrew/Library/Taps/alteredtech
+
+      - name: script
+        working-directory: $(brew --repo)/Library/Taps/alteredtech
+        run: |
+          for file in $(ls); do
+            echo $file
+          done
