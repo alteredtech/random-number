@@ -5,7 +5,10 @@ jobs:
   build:
     runs-on: macos-latest
     steps:
+      - name: tap
+        run: brew tap alteredtech/random-number
       - name: show brew things
         run: |
           echo $(brew --repo)
           cd $(brew --repo)
+          ls
