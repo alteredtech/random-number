@@ -16,4 +16,9 @@ jobs:
           ls
           cd Taps
           ls
-          
+
+      - name: upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: brew
+          path: /usr/local/Homebrew/Library/Taps/alteredtech
