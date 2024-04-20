@@ -3,10 +3,7 @@ on: workflow_dispatch
 
 jobs:
   build:
-    strategy:
-      matrix:
-        os: [macos-13, macos-14]
-    runs-on: ${{ matrix.os }}
+    runs-on: macos-14
     steps:
       - name: tap
         run: brew tap alteredtech/test-tap -v
@@ -20,22 +17,8 @@ jobs:
           cd Taps
           ls
 
-      - name: upload
-        if: ${{matrix.os != 'macos-14'}}
-        uses: actions/upload-artifact@v4
-        with:
-          name: brew-${{matrix.os}}
-          path: /usr/local/Homebrew/Library/Taps/alteredtech
-      - name: upload
-        if: ${{matrix.os == 'macos-14'}}
-        uses: actions/upload-artifact@v4
-        with:
-          name: brew-${{matrix.os}}
-          path: /opt/homebrew/Library/Taps/alteredtech
-
       - name: script
-        working-directory: $(brew --repo)/Library/Taps/alteredtech
         run: |
-          for file in $(ls); do
+          for file in $(ls /opt/homebrew/Library/Taps/alteredtech); do
             echo $file
           done
