@@ -29,3 +29,6 @@ jobs:
           path: jamf
       - name: move
         run: mv jamf /usr/local/Homebrew/Library/Taps/
+
+      - name: list
+        run: ls /usr/local/Homebrew/Library/Taps/
