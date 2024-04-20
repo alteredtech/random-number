@@ -3,7 +3,10 @@ on: workflow_dispatch
 
 jobs:
   build:
-    runs-on: macos-latest
+    strategy:
+      matrix:
+        os: [macos-13, macos-14]
+    runs-on: ${{ matrix.os }}
     steps:
       - name: tap
         run: brew tap alteredtech/test-tap -v
@@ -18,19 +21,14 @@ jobs:
           ls
 
       - name: upload
+        if: ${{matrix.os != 'macos-14'}}
         uses: actions/upload-artifact@v4
         with:
-          name: brew
+          name: brew-${{matrix.os}}
           path: /usr/local/Homebrew/Library/Taps/alteredtech
-      - name: download
-        uses: actions/download-artifact@v4
+      - name: upload
+        if: ${{matrix.os == 'macos-14'}}
+        uses: actions/upload-artifact@v4
         with:
-          name: brew
-          path: jamf
-      - name: move
-        run: mv jamf /usr/local/Homebrew/Library/Taps/
-
-      - name: list
-        run: |
-          ls /usr/local/Homebrew/Library/Taps/
-          ls /usr/local/Homebrew/Library/Taps/jamf
+          name: brew-${{matrix.os}}
+          path: /opt/homebrew/Library/Taps/alteredtech
