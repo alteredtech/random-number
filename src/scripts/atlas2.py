@@ -34,7 +34,7 @@ def multiply(input_number: int) -> int:
     return random.randint(1, int(input_number)) * random.randint(1, 100)
 
 def multiply2(input_number: int) -> int:
-    r"""Summarize the function in one line.
+    """Summarize the function in one line.
 
     Several sentences providing an extended description. Refer to
     variables using back-ticks, e.g. `var`.
@@ -140,4 +140,17 @@ def multiply3(input_number: int) -> int:
             Random number
     """
 
+    return random.randint(1, int(input_number)) * random.randint(1, 100)
+
+def multiply4(input_number: int) -> int:
+    """
+    Multiplies a random number between 1 and the input number
+    with a random number between 1 and 100.
+
+    Args:
+        input_number (int): The input number to multiply.
+
+    Returns:
+        int: The result of the multiplication.
+    """
     return random.randint(1, int(input_number)) * random.randint(1, 100)
