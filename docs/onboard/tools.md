@@ -14,4 +14,4 @@ can be installed from brew
 ##
 trying local page links
 
-[test2](environments.md)
+[test2]({{site.baseurl}}{% link onboard/environments.md%})
