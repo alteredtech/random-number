@@ -15,6 +15,6 @@ can be installed from brew
 trying local page links
 
 [test1]({% link environments.md %})
-[test2]({{ site.baseurl }}{% link environments.md })
+<!-- [test2]({{ site.baseurl }}{% link environments.md })
 [test3]({{ site.baseurl }}/onboard/{% link environments.md })
-[test4]({{ site.url }}{{ site.baseurl }}{% link environments.md %})
+[test4]({{ site.url }}{{ site.baseurl }}{% link environments.md %}) -->
