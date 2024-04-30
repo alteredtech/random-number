@@ -129,15 +129,13 @@ def multiply3(input_number: int) -> int:
     """
     Get input to generate random number
 
-    Parameters
-    ----------
-        input_number : (int)
-            User input
+    Args:
     
-    Returns
-    -------
-        number : int
-            Random number
+        input_number (int):User input
+    
+    Returns:
+
+        number (int):Random number
     """
 
     return random.randint(1, int(input_number)) * random.randint(1, 100)
