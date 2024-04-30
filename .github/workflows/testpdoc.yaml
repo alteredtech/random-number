@@ -1,0 +1,66 @@
+name: Test pdoc build
+
+on:
+  workflow_dispatch:
+  workflow_call:
+  pull_request:
+    branches:
+      - develop
+    types:
+      - opened
+      - synchronize
+    paths:
+      - 'docs/**'
+    paths-ignore:
+      - 'src/**'
+
+jobs:
+  pdoc:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout Code
+      - name: Checkout code
+        uses: actions/checkout@v4
+      # Install Python
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.12.2
+      # Ensure pip is installed and upgraded
+      - name: Ensure pip is installed
+        run: |
+          python -m ensurepip --upgrade
+          python -m pip install --upgrade pip
+      # Install pdoc
+      - name: Pip Requirements file
+        run: |
+          sudo apt-get install python3-pip
+          pip install pdoc3 pipenv requests
+          pipenv install --system
+      # Run pdoc
+      - name: Run pdoc
+        run: |
+          export PYTHONPATH=$PYTHONPATH:./src
+          pdoc src -o ./scripts-out
+      - name: Move folders to right spot
+        run: |
+          mv ./scripts-out/src/* ./scripts-out
+          rmdir ./scripts-out/src
+      - name: Remove index.md
+        run: |
+          rm -f ./scripts-out/index.md
+      - name: Copy README.md
+        run: |
+          cp templates/README.md ./scripts-out/README.md
+      # Upload script-out artifact
+      - name: Upload script-out artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: scripts-out
+          path: ./scripts-out
+          retention-days: 1
+  
+  merge-able:
+    needs: pdoc
+    uses: ./.github/workflows/merge.yaml
+    if: success()

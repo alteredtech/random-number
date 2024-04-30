@@ -1,0 +1,10 @@
+name: This can merge
+
+on: workflow_call
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Merge
+        run: echo "Merging"
