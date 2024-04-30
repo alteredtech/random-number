@@ -7,9 +7,8 @@ on:
       - opened
       - synchronize
     paths:
-      - 'src/scripts/**'
-    paths-ignore:
-      - 'docs/**'
+      - 'src/**'
+      - '!docs/**'
 
 jobs:
 
@@ -208,6 +207,11 @@ jobs:
         name: homebrew-log
         path: /home/runner/.cache/Homebrew/Logs/random-number@9
         retention-days: 5
+  
+  merge-able:
+    needs: tests
+    uses: ./.github/workflows/merge.yaml
+    if: success()
   
   # Remove the release
   # remove-release:
