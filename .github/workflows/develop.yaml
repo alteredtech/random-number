@@ -8,8 +8,6 @@ on:
       - synchronize
     paths:
       - 'src/scripts/**'
-    paths-ignore:
-      - 'docs/**'
 
 jobs:
 

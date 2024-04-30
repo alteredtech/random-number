@@ -11,8 +11,6 @@ on:
       - synchronize
     paths:
       - 'docs/**'
-    paths-ignore:
-      - 'src/**'
 
 jobs:
   pdoc:
