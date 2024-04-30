@@ -6,6 +6,10 @@ on:
     types:
       - opened
       - synchronize
+    paths:
+      - 'src/scripts/**'
+    paths-ignore:
+      - 'docs/**'
 
 jobs:
 
